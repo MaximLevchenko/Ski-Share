@@ -1,0 +1,19 @@
+.header {
+  cursor: pointer;
+}
+
+.header:hover {
+  color: #0875ac77;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterIcons {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}

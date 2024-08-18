@@ -1,0 +1,47 @@
+.MarketplaceItem {
+  width: 223px;
+  height: 332px;
+  background: #ffffff;
+  box-shadow: 1px 1px 21px #cfe8ff;
+  border-radius: 4px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  font-family: "Montserrat";
+}
+
+.imageWrapper {
+  width: 207px;
+  height: 212px;
+}
+
+.imageWrapper img{
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+}
+
+.price {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.freePeaces {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #0875ac;
+}

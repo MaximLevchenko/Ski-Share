@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.services package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.app.services.auth package" href="backend.src.app.services.auth.html" />
+    <link rel="prev" title="backend.src.app.routes.rentals package" href="backend.src.app.routes.rentals.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.services package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.services.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-services-package">
+<h1>backend.src.app.services package<a class="headerlink" href="#backend-src-app-services-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.services.auth.html">backend.src.app.services.auth package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.auth.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.auth.html#module-backend.src.app.services.auth.current_user_service">backend.src.app.services.auth.current_user_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.current_user_service.CurrentUserService"><code class="docutils literal notranslate"><span class="pre">CurrentUserService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.current_user_service.CurrentUserService.find_current_user_by_identity_data"><code class="docutils literal notranslate"><span class="pre">CurrentUserService.find_current_user_by_identity_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.current_user_service.CurrentUserService.prepare_current_user_response"><code class="docutils literal notranslate"><span class="pre">CurrentUserService.prepare_current_user_response()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.auth.html#module-backend.src.app.services.auth.login_service">backend.src.app.services.auth.login_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.login_service.LoginService"><code class="docutils literal notranslate"><span class="pre">LoginService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.login_service.LoginService.prepare_login_response"><code class="docutils literal notranslate"><span class="pre">LoginService.prepare_login_response()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.login_service.LoginService.validate_user_login_data"><code class="docutils literal notranslate"><span class="pre">LoginService.validate_user_login_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.auth.html#module-backend.src.app.services.auth.logout_service">backend.src.app.services.auth.logout_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.logout_service.LogoutService"><code class="docutils literal notranslate"><span class="pre">LogoutService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.logout_service.LogoutService.prepare_logout_response"><code class="docutils literal notranslate"><span class="pre">LogoutService.prepare_logout_response()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.logout_service.LogoutService.remove_user_jti_to_blacklist"><code class="docutils literal notranslate"><span class="pre">LogoutService.remove_user_jti_to_blacklist()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.auth.html#module-backend.src.app.services.auth.refresh_service">backend.src.app.services.auth.refresh_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.refresh_service.RefreshService"><code class="docutils literal notranslate"><span class="pre">RefreshService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.refresh_service.RefreshService.prepare_refresh_response"><code class="docutils literal notranslate"><span class="pre">RefreshService.prepare_refresh_response()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.auth.html#backend.src.app.services.auth.refresh_service.RefreshService.validate_user_refresh_data"><code class="docutils literal notranslate"><span class="pre">RefreshService.validate_user_refresh_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.auth.html#module-backend.src.app.services.auth">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.services.clients.html">backend.src.app.services.clients package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.clients.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.clients.html#module-backend.src.app.services.clients.client_service">backend.src.app.services.clients.client_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.client_service.ClientService"><code class="docutils literal notranslate"><span class="pre">ClientService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.client_service.ClientService.delete_client"><code class="docutils literal notranslate"><span class="pre">ClientService.delete_client()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.client_service.ClientService.prepare_response_with_client_data"><code class="docutils literal notranslate"><span class="pre">ClientService.prepare_response_with_client_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.client_service.ClientService.update_client_data"><code class="docutils literal notranslate"><span class="pre">ClientService.update_client_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.client_service.ClientService.validate_client"><code class="docutils literal notranslate"><span class="pre">ClientService.validate_client()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.clients.html#module-backend.src.app.services.clients.clients_service">backend.src.app.services.clients.clients_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.clients_service.ClientsService"><code class="docutils literal notranslate"><span class="pre">ClientsService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.clients_service.ClientsService.create_client"><code class="docutils literal notranslate"><span class="pre">ClientsService.create_client()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.clients_service.ClientsService.prepare_response_with_clients_data"><code class="docutils literal notranslate"><span class="pre">ClientsService.prepare_response_with_clients_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.clients.html#module-backend.src.app.services.clients.clients_sort_service">backend.src.app.services.clients.clients_sort_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.clients_sort_service.ClientsSortService"><code class="docutils literal notranslate"><span class="pre">ClientsSortService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.clients.html#backend.src.app.services.clients.clients_sort_service.ClientsSortService.sort_clients"><code class="docutils literal notranslate"><span class="pre">ClientsSortService.sort_clients()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.clients.html#module-backend.src.app.services.clients">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.services.employees.html">backend.src.app.services.employees package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.employees.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.employees.html#module-backend.src.app.services.employees.employee_service">backend.src.app.services.employees.employee_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employee_service.EmployeeService"><code class="docutils literal notranslate"><span class="pre">EmployeeService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employee_service.EmployeeService.delete_employee"><code class="docutils literal notranslate"><span class="pre">EmployeeService.delete_employee()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employee_service.EmployeeService.prepare_response_with_employee_profile_data"><code class="docutils literal notranslate"><span class="pre">EmployeeService.prepare_response_with_employee_profile_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employee_service.EmployeeService.update_employee_data"><code class="docutils literal notranslate"><span class="pre">EmployeeService.update_employee_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employee_service.EmployeeService.validate_employee"><code class="docutils literal notranslate"><span class="pre">EmployeeService.validate_employee()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.employees.html#module-backend.src.app.services.employees.employees_service">backend.src.app.services.employees.employees_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employees_service.EmployeesService"><code class="docutils literal notranslate"><span class="pre">EmployeesService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employees_service.EmployeesService.create_employee"><code class="docutils literal notranslate"><span class="pre">EmployeesService.create_employee()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employees_service.EmployeesService.prepare_response_with_employees_data"><code class="docutils literal notranslate"><span class="pre">EmployeesService.prepare_response_with_employees_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.employees.html#module-backend.src.app.services.employees.employees_sort_service">backend.src.app.services.employees.employees_sort_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employees_sort_service.EmployeesSortService"><code class="docutils literal notranslate"><span class="pre">EmployeesSortService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.employees.html#backend.src.app.services.employees.employees_sort_service.EmployeesSortService.sort_employees"><code class="docutils literal notranslate"><span class="pre">EmployeesSortService.sort_employees()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.employees.html#module-backend.src.app.services.employees">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.services.equipments.html">backend.src.app.services.equipments package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.equipments.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.equipments.html#module-backend.src.app.services.equipments.equipment_service">backend.src.app.services.equipments.equipment_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipment_service.EquipmentService"><code class="docutils literal notranslate"><span class="pre">EquipmentService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipment_service.EquipmentService.delete_equipment"><code class="docutils literal notranslate"><span class="pre">EquipmentService.delete_equipment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipment_service.EquipmentService.prepare_response_with_equipment_data"><code class="docutils literal notranslate"><span class="pre">EquipmentService.prepare_response_with_equipment_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipment_service.EquipmentService.update_equipment_data"><code class="docutils literal notranslate"><span class="pre">EquipmentService.update_equipment_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipment_service.EquipmentService.update_equipment_status_as_damaged"><code class="docutils literal notranslate"><span class="pre">EquipmentService.update_equipment_status_as_damaged()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipment_service.EquipmentService.validate_equipment"><code class="docutils literal notranslate"><span class="pre">EquipmentService.validate_equipment()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.equipments.html#module-backend.src.app.services.equipments.equipments_service">backend.src.app.services.equipments.equipments_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipments_service.EquipmentsService"><code class="docutils literal notranslate"><span class="pre">EquipmentsService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipments_service.EquipmentsService.create_equipment"><code class="docutils literal notranslate"><span class="pre">EquipmentsService.create_equipment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipments_service.EquipmentsService.prepare_response_with_equipments_data"><code class="docutils literal notranslate"><span class="pre">EquipmentsService.prepare_response_with_equipments_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.equipments.html#module-backend.src.app.services.equipments.equipments_sort_service">backend.src.app.services.equipments.equipments_sort_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipments_sort_service.EquipmentsSortService"><code class="docutils literal notranslate"><span class="pre">EquipmentsSortService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.equipments.html#backend.src.app.services.equipments.equipments_sort_service.EquipmentsSortService.sort_equipments"><code class="docutils literal notranslate"><span class="pre">EquipmentsSortService.sort_equipments()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.equipments.html#module-backend.src.app.services.equipments">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.services.rentals.html">backend.src.app.services.rentals package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.rentals.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.rentals.html#module-backend.src.app.services.rentals.rental_service">backend.src.app.services.rentals.rental_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rental_service.RentalService"><code class="docutils literal notranslate"><span class="pre">RentalService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rental_service.RentalService.close_rental"><code class="docutils literal notranslate"><span class="pre">RentalService.close_rental()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rental_service.RentalService.delete_rental"><code class="docutils literal notranslate"><span class="pre">RentalService.delete_rental()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rental_service.RentalService.prepare_response_with_rental_data"><code class="docutils literal notranslate"><span class="pre">RentalService.prepare_response_with_rental_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rental_service.RentalService.update_rental_data"><code class="docutils literal notranslate"><span class="pre">RentalService.update_rental_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rental_service.RentalService.validate_rental"><code class="docutils literal notranslate"><span class="pre">RentalService.validate_rental()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.rentals.html#module-backend.src.app.services.rentals.rentals_service">backend.src.app.services.rentals.rentals_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rentals_service.RentalsService"><code class="docutils literal notranslate"><span class="pre">RentalsService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rentals_service.RentalsService.create_rental"><code class="docutils literal notranslate"><span class="pre">RentalsService.create_rental()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rentals_service.RentalsService.prepare_response_with_rentals_data"><code class="docutils literal notranslate"><span class="pre">RentalsService.prepare_response_with_rentals_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.rentals.html#module-backend.src.app.services.rentals.rentals_sort_service">backend.src.app.services.rentals.rentals_sort_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rentals_sort_service.RentalsSortService"><code class="docutils literal notranslate"><span class="pre">RentalsSortService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.services.rentals.html#backend.src.app.services.rentals.rentals_sort_service.RentalsSortService.sort_rentals"><code class="docutils literal notranslate"><span class="pre">RentalsSortService.sort_rentals()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.services.rentals.html#module-backend.src.app.services.rentals">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-backend.src.app.services">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.services" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.routes.rentals.html" class="btn btn-neutral float-left" title="backend.src.app.routes.rentals package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.app.services.auth.html" class="btn btn-neutral float-right" title="backend.src.app.services.auth package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

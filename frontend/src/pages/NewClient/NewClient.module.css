@@ -1,0 +1,80 @@
+.NewClient {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  gap: 24px;
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.nameInput {
+  padding: 16px 32px;
+  border: 1px solid #3c404f;
+  border-radius: 16px;
+  width: 248px;
+  height: 52px;
+  outline: none;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  background-color: #F5F5F5;
+}
+
+.datePicker {
+  width: 248px;
+  height: 56px;
+  border: 1px solid #3c404f;
+  border-radius: 16px;
+}
+
+.phoneInput {
+  padding: 16px 32px;
+  border: 1px solid #3c404f;
+  border-radius: 16px;
+  width: 248px;
+  height: 52px;
+  outline: none;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  background-color: #F5F5F5;
+}
+
+.emailInput {
+  padding: 16px 32px;
+  border: 1px solid #3c404f;
+  border-radius: 16px;
+  width: 348px;
+  height: 52px;
+  outline: none;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  background-color: #F5F5F5;
+}
+
+.createButtonWrapper {
+  width: 195px;
+}
+
+.errorWrapper {
+  margin-bottom: 30px;
+  color: red;
+}

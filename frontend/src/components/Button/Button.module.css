@@ -1,0 +1,41 @@
+.Button {
+  font-family: 'Montserrat';
+  width: 100%;
+  height: 100%;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  border-radius: 16px;
+  display: flex;
+  cursor: pointer;
+  padding: 12px 27px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in;
+  outline: 0;
+  border: none;
+}
+
+.filled {
+  background: #31a3ec;
+  color: white;
+}
+
+.outlined {
+  background: white;
+  color: #31a3ec;
+  border: 1px solid #0875AC;
+}
+
+.outlined:hover {
+  background: rgb(226, 226, 226);
+}
+
+.filled:hover {
+  background: #0875AC;
+}
+
+.Button svg {
+  margin-left: 7px;
+}

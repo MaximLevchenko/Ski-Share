@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.repositories.clients.client_repository &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.repositories.clients.client_repository</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.repositories.clients.client_repository</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">....databases.exts</span> <span class="kn">import</span> <span class="n">db</span>
+<span class="kn">from</span> <span class="nn">...models</span> <span class="kn">import</span> <span class="n">Client</span>
+
+
+<div class="viewcode-block" id="ClientRepository"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.client_repository.ClientRepository">[docs]</a><span class="k">class</span> <span class="nc">ClientRepository</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The ClientRepository class encapsulates the logic necessary to access the database and</span>
+<span class="sd">    perform CRUD operations on the Client model.</span>
+
+<span class="sd">    :ivar client_id: Unique identifier of the client.</span>
+<span class="sd">    :type client_id: int</span>
+
+<span class="sd">    :ivar client_email: Email of the client.</span>
+<span class="sd">    :type client_email: str</span>
+
+<span class="sd">    :ivar client: Instance of Client model. Default is None.</span>
+<span class="sd">    :type client: Client or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">client_email</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize an instance of the ClientRepository class.</span>
+
+<span class="sd">        The constructor tries to find a Client instance based on the provided client_id or client_email. If a</span>
+<span class="sd">        Client instance is found, it is assigned to the client instance variable.</span>
+
+<span class="sd">        :param client_id: Unique identifier of a client. Used to retrieve an existing client by ID.</span>
+<span class="sd">        :type client_id: int or None</span>
+
+<span class="sd">        :param client_email: Unique email of a client. Used to retrieve an existing client by email.</span>
+<span class="sd">        :type client_email: str or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client_id</span> <span class="o">=</span> <span class="n">client_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client_email</span> <span class="o">=</span> <span class="n">client_email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_by_id</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client_email</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_by_email</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ClientRepository.delete"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.client_repository.ClientRepository.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete the current client instance from the database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ClientRepository.update"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.client_repository.ClientRepository.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">update_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the current client instance based on the provided update data.</span>
+
+<span class="sd">        :param update_data: Dictionary containing new values for the client&#39;s attributes.</span>
+<span class="sd">        :type update_data: dict[str, any]</span>
+
+<span class="sd">        :return: Returns True if the update was successful, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_update_data</span><span class="p">(</span><span class="n">update_data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_email&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_email&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_phone&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">phone</span> <span class="o">=</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_phone&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_address&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_address&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_passport_number&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">passport_number</span> <span class="o">=</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_passport_number&quot;</span><span class="p">)</span>
+
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="ClientRepository.get_client"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.client_repository.ClientRepository.get_client">[docs]</a>    <span class="k">def</span> <span class="nf">get_client</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve the current client instance.</span>
+
+<span class="sd">        :return: Returns the current client instance or None if it doesn&#39;t exist.</span>
+<span class="sd">        :rtype: Client or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span></div>
+
+<div class="viewcode-block" id="ClientRepository.get_client_all_data"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.client_repository.ClientRepository.get_client_all_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_client_all_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve all data of the current client instance.</span>
+
+<span class="sd">        :return: Returns a dictionary containing all data of the current client instance. Contains following keys:</span>
+<span class="sd">                    - id (int): The client&#39;s ID.</span>
+<span class="sd">                    - name (str): The client&#39;s name.</span>
+<span class="sd">                    - surname (str): The client&#39;s surname.</span>
+<span class="sd">                    - email (str): The client&#39;s email.</span>
+<span class="sd">                    - phone (str): The client&#39;s phone.</span>
+<span class="sd">                    - passport_number (str): The client&#39;s passport_number.</span>
+<span class="sd">                    - address (str): The client&#39;s address.</span>
+<span class="sd">                    - birth_date (datetime.date): The client&#39;s birthdate.</span>
+<span class="sd">                    - registration_date (datetime.date): The client&#39;s registration date.</span>
+<span class="sd">        :rtype: dict[str, any]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">surname</span><span class="p">,</span>
+                <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">phone</span><span class="p">,</span>
+                <span class="s2">&quot;passport_number&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">passport_number</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
+                <span class="s2">&quot;birth_date&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">birth_date</span><span class="p">,</span> <span class="s2">&quot;registration_date&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">registration_date</span><span class="p">}</span></div>
+
+    <span class="k">def</span> <span class="nf">_find_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve a client by his ID.</span>
+
+<span class="sd">        :return: Returns the Client instance with the provided ID, or None if he doesn&#39;t exist.</span>
+<span class="sd">        :rtype: Client or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Client</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client_id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client_id</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_find_by_email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve a client by his email.</span>
+
+<span class="sd">        :return: Returns the Client instance with the provided email, or None if his doesn&#39;t exist.</span>
+<span class="sd">        :rtype: Client or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Client</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client_email</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">client_email</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_validate_update_data</span><span class="p">(</span><span class="n">client_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the data provided for updating a client.</span>
+
+<span class="sd">        :param client_data: Dictionary containing new values for the client&#39;s attributes.</span>
+<span class="sd">        :type client_data: dict[str, any]</span>
+
+<span class="sd">        :return: Returns True if the provided data is valid, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Client</span><span class="o">.</span><span class="n">validate_email</span><span class="p">(</span><span class="n">client_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_email&quot;</span><span class="p">))</span> <span class="ow">or</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_phone</span><span class="p">(</span><span class="n">client_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_phone&quot;</span><span class="p">))</span> <span class="ow">or</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_passport_number</span><span class="p">(</span><span class="n">client_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_passport_number&quot;</span><span class="p">))</span> <span class="ow">or</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_address</span><span class="p">(</span><span class="n">client_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_address&quot;</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.routes.equipments.equipments_route &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.routes.equipments.equipments_route</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.routes.equipments.equipments_route</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask_jwt_extended</span> <span class="kn">import</span> <span class="n">jwt_required</span>
+<span class="kn">from</span> <span class="nn">flask_restx</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Namespace</span>
+
+<span class="kn">from</span> <span class="nn">.equipments_serialization_models</span> <span class="kn">import</span> <span class="n">create_equipment_post_model</span><span class="p">,</span> <span class="n">create_equipment_get_model</span><span class="p">,</span> \
+    <span class="n">create_equipment_update_model</span>
+<span class="kn">from</span> <span class="nn">...controllers</span> <span class="kn">import</span> <span class="n">ControllerException</span><span class="p">,</span> <span class="n">EquipmentsController</span><span class="p">,</span> <span class="n">EquipmentsSortController</span><span class="p">,</span> <span class="n">EquipmentController</span>
+
+
+<span class="n">equipments_namespace</span> <span class="o">=</span> <span class="n">Namespace</span><span class="p">(</span><span class="s2">&quot;equipments&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Equipments related operations.&quot;</span><span class="p">)</span>
+
+<span class="n">equipment_post_model</span> <span class="o">=</span> <span class="n">create_equipment_post_model</span><span class="p">(</span><span class="n">equipments_namespace</span><span class="p">)</span>
+<span class="n">equipment_get_model</span> <span class="o">=</span> <span class="n">create_equipment_get_model</span><span class="p">(</span><span class="n">equipments_namespace</span><span class="p">)</span>
+<span class="n">equipment_update_model</span> <span class="o">=</span> <span class="n">create_equipment_update_model</span><span class="p">(</span><span class="n">equipments_namespace</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="EquipmentsRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter">[docs]</a><span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">EquipmentsRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to equipment.</span>
+
+<span class="sd">    Provides handlers for HTTP GET and POST requests made to the &#39;/equipments&#39; endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EquipmentsRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.get">[docs]</a>    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">marshal_list_with</span><span class="p">(</span><span class="n">equipment_get_model</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves a list of all equipment.</span>
+
+<span class="sd">        This endpoint requires authentication (JWT token).</span>
+
+<span class="sd">        :return: A list of all equipment along with HTTP status code 200.</span>
+<span class="sd">        :rtype: tuple[list[dict[str, Any]], int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">equipments_controller</span> <span class="o">=</span> <span class="n">EquipmentsController</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">equipments_controller</span><span class="o">.</span><span class="n">create_response_with_equipments_data</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="EquipmentsRouter.post"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.post">[docs]</a>    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">equipment_post_model</span><span class="p">)</span>
+    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Invalid equipment data.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new equipment entry.</span>
+
+<span class="sd">        This endpoint requires authentication (JWT token) and the equipment data as JSON in the request body.</span>
+
+<span class="sd">        The equipment data should match the structure of the `equipment_post_model`.</span>
+
+<span class="sd">        :raises ControllerException: If the provided data is invalid.</span>
+
+<span class="sd">        :return: A dictionary with a success message and the HTTP status code 200.</span>
+<span class="sd">        :rtype: tuple[dict[str, Any], int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">equipments_controller</span> <span class="o">=</span> <span class="n">EquipmentsController</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">equipments_controller</span><span class="o">.</span><span class="n">create_equipment</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">equipments_controller</span><span class="o">.</span><span class="n">create_response_with_successful_create_message</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="EquipmentsSortRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter">[docs]</a><span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/sort&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">EquipmentsSortRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to sorting equipment.</span>
+
+<span class="sd">    Provides a handler for HTTP GET requests made to the &#39;/equipments/sort&#39; endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EquipmentsSortRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter.get">[docs]</a>    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Invalid sort QUERY parameters.&quot;</span><span class="p">)</span>
+    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">marshal_list_with</span><span class="p">(</span><span class="n">equipment_get_model</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetches a list of equipment sorted based on given QUERY parameters.</span>
+
+<span class="sd">        This method requires a JWT token. It creates an `EquipmentsSortController` instance and attempts to sort the</span>
+<span class="sd">        equipment using the provided QUERY parameters. If sorting is successful, it returns a response containing the</span>
+<span class="sd">        sorted equipment data.</span>
+
+<span class="sd">        :return: A response object containing sorted equipment data or an error message if an error occurs.</span>
+<span class="sd">        :rtype: tuple[list[dict[str, Any]], int]</span>
+
+<span class="sd">        :raises ControllerException: If an error occurs while sorting the equipment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">equipments_sort_controller</span> <span class="o">=</span> <span class="n">EquipmentsSortController</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">equipments_sort_controller</span><span class="o">.</span><span class="n">sort_equipments</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">equipments_sort_controller</span><span class="o">.</span><span class="n">create_response_with_sorted_equipments_data</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="EquipmentRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter">[docs]</a><span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/equipment/&lt;int:inventory_number&gt;&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">EquipmentRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to a specific piece of equipment.</span>
+
+<span class="sd">    Provides handlers for HTTP GET, PUT, and DELETE requests made to the &#39;/equipments/equipment/{inventory_number}&#39;</span>
+<span class="sd">    endpoint, where `{inventory_number}` is the inventory number of the specific equipment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EquipmentRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.get">[docs]</a>    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Equipment not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">marshal_with</span><span class="p">(</span><span class="n">equipment_get_model</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory_number</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetches the data for a specific piece of equipment.</span>
+
+<span class="sd">        This method requires a JWT token. It creates an `EquipmentController` instance, validates the equipment,</span>
+<span class="sd">        and if the equipment is valid, it returns a response containing the equipment data.</span>
+
+<span class="sd">        :param inventory_number: The inventory number of the specific piece of equipment.</span>
+<span class="sd">        :type inventory_number: int</span>
+
+<span class="sd">        :return: A response object containing the equipment data or an error message if an error occurs.</span>
+<span class="sd">        :rtype: tuple[dict[str, Any], int]</span>
+
+<span class="sd">        :raises ControllerException: If an error occurs while fetching or validating the equipment data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">equipment_controller</span> <span class="o">=</span> <span class="n">EquipmentController</span><span class="p">(</span><span class="n">inventory_number</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">equipment_controller</span><span class="o">.</span><span class="n">validate_equipment</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">equipment_controller</span><span class="o">.</span><span class="n">create_response_with_equipment_data</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="EquipmentRouter.put"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.put">[docs]</a>    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">equipment_update_model</span><span class="p">)</span>
+    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Invalid equipment update data.&quot;</span><span class="p">)</span>
+    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Equipment not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory_number</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Updates the data for a specific piece of equipment.</span>
+
+<span class="sd">        This method requires a JWT token. It creates an `EquipmentController` instance, validates the equipment,</span>
+<span class="sd">        and if the equipment is valid, it updates the equipment data.</span>
+
+<span class="sd">        :param inventory_number: The inventory number of the specific piece of equipment.</span>
+<span class="sd">        :type inventory_number: int</span>
+
+<span class="sd">        :return: A response object containing a success message or an error message if an error occurs.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If an error occurs while updating or validating the equipment data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">equipment_controller</span> <span class="o">=</span> <span class="n">EquipmentController</span><span class="p">(</span><span class="n">inventory_number</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">equipment_controller</span><span class="o">.</span><span class="n">validate_equipment</span><span class="p">()</span>
+            <span class="n">equipment_controller</span><span class="o">.</span><span class="n">update_equipment</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">equipment_controller</span><span class="o">.</span><span class="n">create_response_with_successful_update_message</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="EquipmentRouter.delete"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.delete">[docs]</a>    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">201</span><span class="p">,</span> <span class="s2">&quot;Equipment deleted successfully.&quot;</span><span class="p">)</span>
+    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Equipment not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory_number</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deletes a specific piece of equipment.</span>
+
+<span class="sd">        This method requires a JWT token. It creates an `EquipmentController` instance, validates the equipment,</span>
+<span class="sd">        and if the equipment is valid, it deletes the equipment.</span>
+
+<span class="sd">        :param inventory_number: The inventory number of the specific piece of equipment.</span>
+<span class="sd">        :type inventory_number: int</span>
+
+<span class="sd">        :return: A response object containing a success message or an error message if an error occurs.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If an error occurs while deleting or validating the equipment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">equipment_controller</span> <span class="o">=</span> <span class="n">EquipmentController</span><span class="p">(</span><span class="n">inventory_number</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">equipment_controller</span><span class="o">.</span><span class="n">validate_equipment</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="n">equipment_controller</span><span class="o">.</span><span class="n">delete_equipment</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">equipment_controller</span><span class="o">.</span><span class="n">create_response_with_successful_delete_message</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="EquipmentDamagedRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter">[docs]</a><span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/equipment/&lt;int:inventory_number&gt;/damaged&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">EquipmentDamagedRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to a specific piece of equipment that has been marked as damaged.</span>
+
+<span class="sd">    Provides a handler for HTTP GET requests made to the &#39;/equipments/equipment/{inventory_number}/damaged&#39;</span>
+<span class="sd">    endpoint, where `{inventory_number}` is the inventory number of the specific piece of equipment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EquipmentDamagedRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter.get">[docs]</a>    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">201</span><span class="p">,</span> <span class="s2">&quot;Equipment updated successfully.&quot;</span><span class="p">)</span>
+    <span class="nd">@equipments_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Equipment not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory_number</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Marks a specific piece of equipment as damaged.</span>
+
+<span class="sd">        This method requires a JWT token. It creates an `EquipmentController` instance, validates the equipment,</span>
+<span class="sd">        and if the equipment is valid, it updates the status of the equipment as damaged.</span>
+
+<span class="sd">        :param inventory_number: The inventory number of the specific piece of equipment.</span>
+<span class="sd">        :type inventory_number: int</span>
+
+<span class="sd">        :return: A response object containing a success message or an error message if an error occurs.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If an error occurs while updating the equipment status or validating the equipment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">equipment_controller</span> <span class="o">=</span> <span class="n">EquipmentController</span><span class="p">(</span><span class="n">inventory_number</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">equipment_controller</span><span class="o">.</span><span class="n">validate_equipment</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="n">equipment_controller</span><span class="o">.</span><span class="n">update_equipment_status_as_damaged</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">equipment_controller</span><span class="o">.</span><span class="n">create_response_with_successful_update_message</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

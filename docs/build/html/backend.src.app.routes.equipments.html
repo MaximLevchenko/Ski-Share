@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.routes.equipments package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.app.routes.rentals package" href="backend.src.app.routes.rentals.html" />
+    <link rel="prev" title="backend.src.app.routes.employees package" href="backend.src.app.routes.employees.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.routes.html">backend.src.app.routes package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.routes.equipments package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.routes.equipments.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-routes-equipments-package">
+<h1>backend.src.app.routes.equipments package<a class="headerlink" href="#backend-src-app-routes-equipments-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-backend.src.app.routes.equipments.equipments_route">
+<span id="backend-src-app-routes-equipments-equipments-route-module"></span><h2>backend.src.app.routes.equipments.equipments_route module<a class="headerlink" href="#module-backend.src.app.routes.equipments.equipments_route" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.routes.equipments.equipments_route.</span></span><span class="sig-name descname"><span class="pre">EquipmentDamagedRouter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentDamagedRouter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Resource</span></code></p>
+<p>Router for handling operations related to a specific piece of equipment that has been marked as damaged.</p>
+<p>Provides a handler for HTTP GET requests made to the ‘/equipments/equipment/{inventory_number}/damaged’
+endpoint, where <cite>{inventory_number}</cite> is the inventory number of the specific piece of equipment.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inventory_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentDamagedRouter.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter.get" title="Permalink to this definition"></a></dt>
+<dd><p>Marks a specific piece of equipment as damaged.</p>
+<p>This method requires a JWT token. It creates an <cite>EquipmentController</cite> instance, validates the equipment,
+and if the equipment is valid, it updates the status of the equipment as damaged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inventory_number</strong> (<em>int</em>) – The inventory number of the specific piece of equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A response object containing a success message or an error message if an error occurs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[dict[str, str], int]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If an error occurs while updating the equipment status or validating the equipment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'GET'}</span></em><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter.methods" title="Permalink to this definition"></a></dt>
+<dd><p>The methods this view is registered for. Uses the same default
+(<code class="docutils literal notranslate"><span class="pre">[&quot;GET&quot;,</span> <span class="pre">&quot;HEAD&quot;,</span> <span class="pre">&quot;OPTIONS&quot;]</span></code>) as <code class="docutils literal notranslate"><span class="pre">route</span></code> and
+<code class="docutils literal notranslate"><span class="pre">add_url_rule</span></code> by default.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentRouter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.routes.equipments.equipments_route.</span></span><span class="sig-name descname"><span class="pre">EquipmentRouter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentRouter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentRouter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Resource</span></code></p>
+<p>Router for handling operations related to a specific piece of equipment.</p>
+<p>Provides handlers for HTTP GET, PUT, and DELETE requests made to the ‘/equipments/equipment/{inventory_number}’
+endpoint, where <cite>{inventory_number}</cite> is the inventory number of the specific equipment.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentRouter.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inventory_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentRouter.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.delete" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes a specific piece of equipment.</p>
+<p>This method requires a JWT token. It creates an <cite>EquipmentController</cite> instance, validates the equipment,
+and if the equipment is valid, it deletes the equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inventory_number</strong> (<em>int</em>) – The inventory number of the specific piece of equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A response object containing a success message or an error message if an error occurs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[dict[str, str], int]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If an error occurs while deleting or validating the equipment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentRouter.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inventory_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentRouter.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.get" title="Permalink to this definition"></a></dt>
+<dd><p>Fetches the data for a specific piece of equipment.</p>
+<p>This method requires a JWT token. It creates an <cite>EquipmentController</cite> instance, validates the equipment,
+and if the equipment is valid, it returns a response containing the equipment data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inventory_number</strong> (<em>int</em>) – The inventory number of the specific piece of equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A response object containing the equipment data or an error message if an error occurs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[dict[str, Any], int]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If an error occurs while fetching or validating the equipment data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentRouter.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'DELETE',</span> <span class="pre">'GET',</span> <span class="pre">'PUT'}</span></em><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.methods" title="Permalink to this definition"></a></dt>
+<dd><p>The methods this view is registered for. Uses the same default
+(<code class="docutils literal notranslate"><span class="pre">[&quot;GET&quot;,</span> <span class="pre">&quot;HEAD&quot;,</span> <span class="pre">&quot;OPTIONS&quot;]</span></code>) as <code class="docutils literal notranslate"><span class="pre">route</span></code> and
+<code class="docutils literal notranslate"><span class="pre">add_url_rule</span></code> by default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentRouter.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inventory_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentRouter.put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.put" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the data for a specific piece of equipment.</p>
+<p>This method requires a JWT token. It creates an <cite>EquipmentController</cite> instance, validates the equipment,
+and if the equipment is valid, it updates the equipment data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inventory_number</strong> (<em>int</em>) – The inventory number of the specific piece of equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A response object containing a success message or an error message if an error occurs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[dict[str, str], int]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If an error occurs while updating or validating the equipment data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentsRouter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.routes.equipments.equipments_route.</span></span><span class="sig-name descname"><span class="pre">EquipmentsRouter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentsRouter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Resource</span></code></p>
+<p>Router for handling operations related to equipment.</p>
+<p>Provides handlers for HTTP GET and POST requests made to the ‘/equipments’ endpoint.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentsRouter.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.get" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves a list of all equipment.</p>
+<p>This endpoint requires authentication (JWT token).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of all equipment along with HTTP status code 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[list[dict[str, Any]], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'GET',</span> <span class="pre">'POST'}</span></em><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.methods" title="Permalink to this definition"></a></dt>
+<dd><p>The methods this view is registered for. Uses the same default
+(<code class="docutils literal notranslate"><span class="pre">[&quot;GET&quot;,</span> <span class="pre">&quot;HEAD&quot;,</span> <span class="pre">&quot;OPTIONS&quot;]</span></code>) as <code class="docutils literal notranslate"><span class="pre">route</span></code> and
+<code class="docutils literal notranslate"><span class="pre">add_url_rule</span></code> by default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentsRouter.post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.post" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new equipment entry.</p>
+<p>This endpoint requires authentication (JWT token) and the equipment data as JSON in the request body.</p>
+<p>The equipment data should match the structure of the <cite>equipment_post_model</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the provided data is invalid.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary with a success message and the HTTP status code 200.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[dict[str, Any], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.routes.equipments.equipments_route.</span></span><span class="sig-name descname"><span class="pre">EquipmentsSortRouter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentsSortRouter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Resource</span></code></p>
+<p>Router for handling operations related to sorting equipment.</p>
+<p>Provides a handler for HTTP GET requests made to the ‘/equipments/sort’ endpoint.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_route.html#EquipmentsSortRouter.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter.get" title="Permalink to this definition"></a></dt>
+<dd><p>Fetches a list of equipment sorted based on given QUERY parameters.</p>
+<p>This method requires a JWT token. It creates an <cite>EquipmentsSortController</cite> instance and attempts to sort the
+equipment using the provided QUERY parameters. If sorting is successful, it returns a response containing the
+sorted equipment data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A response object containing sorted equipment data or an error message if an error occurs.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[list[dict[str, Any]], int]</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If an error occurs while sorting the equipment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">t.Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'GET'}</span></em><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter.methods" title="Permalink to this definition"></a></dt>
+<dd><p>The methods this view is registered for. Uses the same default
+(<code class="docutils literal notranslate"><span class="pre">[&quot;GET&quot;,</span> <span class="pre">&quot;HEAD&quot;,</span> <span class="pre">&quot;OPTIONS&quot;]</span></code>) as <code class="docutils literal notranslate"><span class="pre">route</span></code> and
+<code class="docutils literal notranslate"><span class="pre">add_url_rule</span></code> by default.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.routes.equipments.equipments_serialization_models">
+<span id="backend-src-app-routes-equipments-equipments-serialization-models-module"></span><h2>backend.src.app.routes.equipments.equipments_serialization_models module<a class="headerlink" href="#module-backend.src.app.routes.equipments.equipments_serialization_models" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_get_model">
+<span class="sig-prename descclassname"><span class="pre">backend.src.app.routes.equipments.equipments_serialization_models.</span></span><span class="sig-name descname"><span class="pre">create_equipment_get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipments_namespace</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_serialization_models.html#create_equipment_get_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_get_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_post_model">
+<span class="sig-prename descclassname"><span class="pre">backend.src.app.routes.equipments.equipments_serialization_models.</span></span><span class="sig-name descname"><span class="pre">create_equipment_post_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipments_namespace</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_serialization_models.html#create_equipment_post_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_post_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_update_model">
+<span class="sig-prename descclassname"><span class="pre">backend.src.app.routes.equipments.equipments_serialization_models.</span></span><span class="sig-name descname"><span class="pre">create_equipment_update_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipments_namespace</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/routes/equipments/equipments_serialization_models.html#create_equipment_update_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_update_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-backend.src.app.routes.equipments">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.routes.equipments" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.routes.employees.html" class="btn btn-neutral float-left" title="backend.src.app.routes.employees package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.app.routes.rentals.html" class="btn btn-neutral float-right" title="backend.src.app.routes.rentals package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

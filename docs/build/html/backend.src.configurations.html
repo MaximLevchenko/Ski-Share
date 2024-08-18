@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.configurations package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.databases package" href="backend.src.databases.html" />
+    <link rel="prev" title="backend.src.app.services.rentals package" href="backend.src.app.services.rentals.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+      <li class="breadcrumb-item active">backend.src.configurations package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.configurations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-configurations-package">
+<h1>backend.src.configurations package<a class="headerlink" href="#backend-src-configurations-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-backend.src.configurations.base_config">
+<span id="backend-src-configurations-base-config-module"></span><h2>backend.src.configurations.base_config module<a class="headerlink" href="#module-backend.src.configurations.base_config" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.configurations.base_config.</span></span><span class="sig-name descname"><span class="pre">BaseConfig</span></span><a class="reference internal" href="_modules/backend/src/configurations/base_config.html#BaseConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class represents the base configuration for the project.</p>
+<p>Configuration settings are defined as class variables. The settings include secret keys, SQLAlchemy settings,
+and JWT token settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>SECRET_KEY</strong> – A secret key for the application.</p></li>
+<li><p><strong>SQLALCHEMY_TRACK_MODIFICATIONS</strong> – A setting that determines if SQLAlchemy should track modifications.</p></li>
+<li><p><strong>JWT_ACCESS_TOKEN_EXPIRES</strong> – The duration before a JWT access token expires.</p></li>
+<li><p><strong>JWT_REFRESH_TOKEN_EXPIRES</strong> – The duration before a JWT refresh token expires.</p></li>
+<li><p><strong>JWT_SECRET_KEY</strong> – A secret key for JWT.</p></li>
+<li><p><strong>JWT_ACCESS_TOKEN_LOCATION</strong> – The locations where the JWT access token can be found.</p></li>
+<li><p><strong>JWT_REFRESH_TOKEN_LOCATION</strong> – The locations where the JWT refresh token can be found.</p></li>
+<li><p><strong>JWT_REFRESH_COOKIE_NAME</strong> – The name of the cookie that stores the JWT refresh token.</p></li>
+<li><p><strong>JWT_COOKIE_CSRF_PROTECT</strong> – A setting that determines if CSRF protection should be enabled for the JWT cookie.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.JWT_ACCESS_TOKEN_EXPIRES">
+<span class="sig-name descname"><span class="pre">JWT_ACCESS_TOKEN_EXPIRES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">datetime.timedelta(seconds=1800)</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.JWT_ACCESS_TOKEN_EXPIRES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.JWT_ACCESS_TOKEN_LOCATION">
+<span class="sig-name descname"><span class="pre">JWT_ACCESS_TOKEN_LOCATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['headers']</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.JWT_ACCESS_TOKEN_LOCATION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.JWT_COOKIE_CSRF_PROTECT">
+<span class="sig-name descname"><span class="pre">JWT_COOKIE_CSRF_PROTECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.JWT_COOKIE_CSRF_PROTECT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.JWT_REFRESH_COOKIE_NAME">
+<span class="sig-name descname"><span class="pre">JWT_REFRESH_COOKIE_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'refresh_token'</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.JWT_REFRESH_COOKIE_NAME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.JWT_REFRESH_TOKEN_EXPIRES">
+<span class="sig-name descname"><span class="pre">JWT_REFRESH_TOKEN_EXPIRES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">datetime.timedelta(days=1)</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.JWT_REFRESH_TOKEN_EXPIRES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.JWT_REFRESH_TOKEN_LOCATION">
+<span class="sig-name descname"><span class="pre">JWT_REFRESH_TOKEN_LOCATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['cookies']</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.JWT_REFRESH_TOKEN_LOCATION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.JWT_SECRET_KEY">
+<span class="sig-name descname"><span class="pre">JWT_SECRET_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'81718cf43282cf50174bbe80'</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.JWT_SECRET_KEY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.SECRET_KEY">
+<span class="sig-name descname"><span class="pre">SECRET_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'049fe579ccadcd74b9a66866'</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.SECRET_KEY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.base_config.BaseConfig.SQLALCHEMY_TRACK_MODIFICATIONS">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_TRACK_MODIFICATIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#backend.src.configurations.base_config.BaseConfig.SQLALCHEMY_TRACK_MODIFICATIONS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.configurations.dev_config">
+<span id="backend-src-configurations-dev-config-module"></span><h2>backend.src.configurations.dev_config module<a class="headerlink" href="#module-backend.src.configurations.dev_config" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.configurations.dev_config.DevConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.configurations.dev_config.</span></span><span class="sig-name descname"><span class="pre">DevConfig</span></span><a class="reference internal" href="_modules/backend/src/configurations/dev_config.html#DevConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.configurations.dev_config.DevConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#backend.src.configurations.base_config.BaseConfig" title="backend.src.configurations.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseConfig</span></code></a></p>
+<p>This class represents the development configuration for the project, which inherits from the base configuration.</p>
+<p>It defines configuration settings specific to a development environment, including the database URI,
+SQLALCHEMY_ECHO and DEBUG settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>SQLALCHEMY_DATABASE_URI</strong> – The URI for the development database.</p></li>
+<li><p><strong>SQLALCHEMY_ECHO</strong> – A setting that determines if SQLAlchemy should log SQL queries to the console.</p></li>
+<li><p><strong>DEBUG</strong> – A setting that determines if the application should run in debug mode.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.dev_config.DevConfig.DEBUG">
+<span class="sig-name descname"><span class="pre">DEBUG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#backend.src.configurations.dev_config.DevConfig.DEBUG" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.dev_config.DevConfig.SQLALCHEMY_DATABASE_URI">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_DATABASE_URI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sqlite:////home/levchmak/SWI/ski-share/backend/src/databases/dev.db'</span></em><a class="headerlink" href="#backend.src.configurations.dev_config.DevConfig.SQLALCHEMY_DATABASE_URI" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.dev_config.DevConfig.SQLALCHEMY_ECHO">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_ECHO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#backend.src.configurations.dev_config.DevConfig.SQLALCHEMY_ECHO" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.configurations.prod_config">
+<span id="backend-src-configurations-prod-config-module"></span><h2>backend.src.configurations.prod_config module<a class="headerlink" href="#module-backend.src.configurations.prod_config" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.configurations.prod_config.ProdConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.configurations.prod_config.</span></span><span class="sig-name descname"><span class="pre">ProdConfig</span></span><a class="reference internal" href="_modules/backend/src/configurations/prod_config.html#ProdConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.configurations.prod_config.ProdConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#backend.src.configurations.base_config.BaseConfig" title="backend.src.configurations.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseConfig</span></code></a></p>
+<p>This class represents the production configuration for the project, which inherits from the base configuration.</p>
+<p>It defines configuration settings specific to a production environment, including the database URI,
+DEBUG, SQLALCHEMY_ECHO and SQLALCHEMY_TRACK_MODIFICATIONS settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>SQLALCHEMY_DATABASE_URI</strong> – The URI for the production database.</p></li>
+<li><p><strong>DEBUG</strong> – A setting that determines if the application should run in debug mode.</p></li>
+<li><p><strong>SQLALCHEMY_ECHO</strong> – A setting that determines if SQLAlchemy should log SQL queries to the console.</p></li>
+<li><p><strong>SQLALCHEMY_TRACK_MODIFICATIONS</strong> – A setting that determines if SQLAlchemy should track modifications to objects
+and emit signals.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.prod_config.ProdConfig.DEBUG">
+<span class="sig-name descname"><span class="pre">DEBUG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#backend.src.configurations.prod_config.ProdConfig.DEBUG" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.prod_config.ProdConfig.SQLALCHEMY_DATABASE_URI">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_DATABASE_URI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sqlite:///prod.db'</span></em><a class="headerlink" href="#backend.src.configurations.prod_config.ProdConfig.SQLALCHEMY_DATABASE_URI" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.prod_config.ProdConfig.SQLALCHEMY_ECHO">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_ECHO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#backend.src.configurations.prod_config.ProdConfig.SQLALCHEMY_ECHO" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.prod_config.ProdConfig.SQLALCHEMY_TRACK_MODIFICATIONS">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_TRACK_MODIFICATIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#backend.src.configurations.prod_config.ProdConfig.SQLALCHEMY_TRACK_MODIFICATIONS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.configurations.test_config">
+<span id="backend-src-configurations-test-config-module"></span><h2>backend.src.configurations.test_config module<a class="headerlink" href="#module-backend.src.configurations.test_config" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.configurations.test_config.TestConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.configurations.test_config.</span></span><span class="sig-name descname"><span class="pre">TestConfig</span></span><a class="reference internal" href="_modules/backend/src/configurations/test_config.html#TestConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.configurations.test_config.TestConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#backend.src.configurations.base_config.BaseConfig" title="backend.src.configurations.base_config.BaseConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseConfig</span></code></a></p>
+<p>This class represents the testing configuration for the project, which inherits from the base configuration.</p>
+<p>It defines configuration settings specific to a testing environment, including the database URI,
+SQLALCHEMY_ECHO, and TESTING settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>SQLALCHEMY_DATABASE_URI</strong> – The URI for the testing database.</p></li>
+<li><p><strong>SQLALCHEMY_ECHO</strong> – A setting that determines if SQLAlchemy should log SQL queries to the console.</p></li>
+<li><p><strong>TESTING</strong> – A setting that determines if the application should run in testing mode.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.test_config.TestConfig.SQLALCHEMY_DATABASE_URI">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_DATABASE_URI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sqlite:////home/levchmak/SWI/ski-share/backend/src/databases/test.db'</span></em><a class="headerlink" href="#backend.src.configurations.test_config.TestConfig.SQLALCHEMY_DATABASE_URI" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.test_config.TestConfig.SQLALCHEMY_ECHO">
+<span class="sig-name descname"><span class="pre">SQLALCHEMY_ECHO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#backend.src.configurations.test_config.TestConfig.SQLALCHEMY_ECHO" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.configurations.test_config.TestConfig.TESTING">
+<span class="sig-name descname"><span class="pre">TESTING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#backend.src.configurations.test_config.TestConfig.TESTING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.configurations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.configurations" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.services.rentals.html" class="btn btn-neutral float-left" title="backend.src.app.services.rentals package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.databases.html" class="btn btn-neutral float-right" title="backend.src.databases package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

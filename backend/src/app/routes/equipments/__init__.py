@@ -1,0 +1,1 @@
+from .equipments_route import equipments_namespace

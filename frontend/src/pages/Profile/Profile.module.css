@@ -1,0 +1,153 @@
+.Profile {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileWrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.profileInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilePhoto {
+  width: 223px;
+  height: 270px;
+  min-width: 223px;
+  min-height: 270px;
+}
+
+.profilePhoto img {
+  width: 100%;
+  height: 100%;
+}
+
+.profileStats {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #3c404f;
+}
+
+.profileData {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profileRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+}
+
+.profileRow svg {
+  margin-right: 7px;
+}
+
+.data {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+  color: #3c404f;
+}
+
+.statsContainer {
+  width: 400px;
+  height: 333px;
+  background: #6d748c;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  padding: 32px 29px;
+  position: relative;
+}
+
+.statsTitle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  margin-bottom: 29px;
+}
+
+.statsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statsBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+
+.snow {
+  position: absolute;
+  z-index: 1;
+  width: 430px;
+  height: 100px;
+  top: -30px;
+  left: -20px;
+}
+
+.snow img {
+  width: 100%;
+  height: 100%;
+}
+
+.rentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 220px;
+}
+
+@media (max-width: 1460px) {
+  .profileWrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+  }
+
+  .snow {
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    left: -15px;
+  }
+}

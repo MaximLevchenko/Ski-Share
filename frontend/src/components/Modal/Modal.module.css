@@ -1,0 +1,32 @@
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #d1d5db;
+  opacity: 0.8;
+}
+
+.whiteWindow {
+  position: fixed;
+  top: 10rem;
+  right: 10rem;
+  bottom: 10rem;
+  left: 10rem;
+  padding: 32px;
+  background-color: #F5F5F5;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+.actionBar {
+  display: flex;
+  justify-content: flex-end;
+}

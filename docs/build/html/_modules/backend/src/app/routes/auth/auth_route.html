@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.routes.auth.auth_route &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.routes.auth.auth_route</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.routes.auth.auth_route</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask_jwt_extended</span> <span class="kn">import</span> <span class="n">get_jwt</span><span class="p">,</span> <span class="n">jwt_required</span><span class="p">,</span> <span class="n">get_jwt_identity</span>
+<span class="kn">from</span> <span class="nn">flask_restx</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Namespace</span>
+
+<span class="kn">from</span> <span class="nn">.auth_serialization_models</span> <span class="kn">import</span> <span class="n">create_login_post_model</span><span class="p">,</span> <span class="n">create_login_get_model</span><span class="p">,</span> <span class="n">create_refresh_get_model</span><span class="p">,</span> \
+    <span class="n">create_current_user_get_model</span>
+<span class="kn">from</span> <span class="nn">...controllers</span> <span class="kn">import</span> <span class="n">ControllerException</span><span class="p">,</span> <span class="n">LoginController</span><span class="p">,</span> <span class="n">LogoutController</span><span class="p">,</span> <span class="n">RefreshController</span><span class="p">,</span> \
+    <span class="n">CurrentUserController</span>
+
+
+<span class="n">auth_namespace</span> <span class="o">=</span> <span class="n">Namespace</span><span class="p">(</span><span class="s2">&quot;auth&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Authentication related operations.&quot;</span><span class="p">)</span>
+
+<span class="n">login_post_model</span> <span class="o">=</span> <span class="n">create_login_post_model</span><span class="p">(</span><span class="n">auth_namespace</span><span class="p">)</span>
+<span class="n">login_get_model</span> <span class="o">=</span> <span class="n">create_login_get_model</span><span class="p">(</span><span class="n">auth_namespace</span><span class="p">)</span>
+<span class="n">refresh_get_model</span> <span class="o">=</span> <span class="n">create_refresh_get_model</span><span class="p">(</span><span class="n">auth_namespace</span><span class="p">)</span>
+<span class="n">current_user_get_model</span> <span class="o">=</span> <span class="n">create_current_user_get_model</span><span class="p">(</span><span class="n">auth_namespace</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="LoginRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LoginRouter">[docs]</a><span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LoginRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This router handles the user login operation.</span>
+
+<span class="sd">    It validates the received user credentials and if valid, generates and returns an access token.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LoginRouter.post"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LoginRouter.post">[docs]</a>    <span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">login_post_model</span><span class="p">)</span>
+    <span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span> <span class="s2">&quot;Invalid email or password.&quot;</span><span class="p">)</span>
+    <span class="c1"># @auth_namespace.marshal_with(login_get_model)</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validates user credentials and provides a JWT token if valid.</span>
+
+<span class="sd">        This method expects user email and password in the request&#39;s body.</span>
+<span class="sd">        If the credentials are valid, it returns a JWT token for the user to authenticate further requests.</span>
+
+<span class="sd">        :raises ControllerException: If the user credentials are invalid.</span>
+
+<span class="sd">        :return: A dictionary with JWT access and refresh tokens, and the HTTP status code 200.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">login_controller</span> <span class="o">=</span> <span class="n">LoginController</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">login_controller</span><span class="o">.</span><span class="n">validate_user</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">login_controller</span><span class="o">.</span><span class="n">create_response</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="LogoutRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LogoutRouter">[docs]</a><span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/logout&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">LogoutRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This router handles the user logout operation.</span>
+
+<span class="sd">    It revokes the JWT token associated with the current session.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LogoutRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LogoutRouter.get">[docs]</a>    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Revokes the current JWT token.</span>
+
+<span class="sd">        This method revokes the JWT token associated with the current session, effectively logging out the user.</span>
+
+<span class="sd">        :return: A dictionary with a success message and the HTTP status code 200.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logout_controller</span> <span class="o">=</span> <span class="n">LogoutController</span><span class="p">(</span><span class="n">get_jwt</span><span class="p">()[</span><span class="s2">&quot;jti&quot;</span><span class="p">])</span>
+
+        <span class="n">logout_controller</span><span class="o">.</span><span class="n">revoke_user_jti</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">logout_controller</span><span class="o">.</span><span class="n">create_response</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="RefreshRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.RefreshRouter">[docs]</a><span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/refresh&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">RefreshRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This router handles the token refresh operation.</span>
+
+<span class="sd">    It validates the refresh token and if valid, generates a new access token.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RefreshRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.RefreshRouter.get">[docs]</a>    <span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">marshal_with</span><span class="p">(</span><span class="n">refresh_get_model</span><span class="p">)</span>
+    <span class="c1"># @jwt_required(refresh=True)</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validates the refresh token and provides a new JWT access token if valid.</span>
+
+<span class="sd">        This method expects a JWT refresh token. If the token is valid, it returns a new JWT access token.</span>
+
+<span class="sd">        :raises ControllerException: If the refresh token is invalid.</span>
+
+<span class="sd">        :return: A dictionary with a new JWT access token and the HTTP status code 200.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">refresh_controller</span> <span class="o">=</span> <span class="n">RefreshController</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;refresh_token&quot;</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">refresh_controller</span><span class="o">.</span><span class="n">validate_user_refresh_token</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">refresh_controller</span><span class="o">.</span><span class="n">create_response</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="CurrentEmployeeRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.CurrentEmployeeRouter">[docs]</a><span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/current-employee&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">CurrentEmployeeRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This router returns the data of the currently authenticated user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CurrentEmployeeRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.CurrentEmployeeRouter.get">[docs]</a>    <span class="nd">@auth_namespace</span><span class="o">.</span><span class="n">marshal_with</span><span class="p">(</span><span class="n">current_user_get_model</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the data of the currently authenticated user.</span>
+
+<span class="sd">        This method returns the details of the currently authenticated user based on the JWT token.</span>
+
+<span class="sd">        :return: A dictionary with the data of the currently authenticated user and the HTTP status code 200.</span>
+<span class="sd">        :rtype: tuple[dict[str, any], int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">current_user_controller</span> <span class="o">=</span> <span class="n">CurrentUserController</span><span class="p">(</span><span class="n">get_jwt_identity</span><span class="p">())</span>
+
+        <span class="n">current_user_controller</span><span class="o">.</span><span class="n">find_user_by_identity</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">current_user_controller</span><span class="o">.</span><span class="n">create_response</span><span class="p">()</span></div></div>
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

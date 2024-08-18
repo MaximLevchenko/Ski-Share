@@ -1,0 +1,110 @@
+.NewRent {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rentContainer {
+  margin-top: 32px;
+}
+
+.subtitle {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color: #0875ac;
+}
+
+.datePicker {
+  margin-top: 30px;
+  width: 100%;
+  height: 56px;
+  border: 1px solid #3c404f;
+  border-radius: 16px;
+}
+
+.buttonContainer {
+  width: 230px;
+  height: 44px;
+  margin-left: 35px;
+}
+
+.viewBlock {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  width: 100%;
+  border: 1px solid #3c404f;
+  border-radius: 16px;
+  padding: 22px 26px;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.inputsContainer {
+  width: 50%;
+}
+
+.statsContainer {
+  width: 50%;
+}
+
+.itemRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.chooseClientWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.statsBlock {
+  width: 70%;
+  min-height: 365px;
+  background: #415ca2;
+  border-radius: 15px;
+  padding: 32px;
+  font-family: 'Montserrat';
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #ffffff;
+}
+
+.statsTitle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.statsInfo {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+}
+
+.timeError {
+  color: red;
+  margin-top: 12px;
+}
+
+.saveButtonWrapper {
+  width: 273px;
+  margin-top: 35px;
+}

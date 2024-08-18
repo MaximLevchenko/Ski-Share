@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.models.client_model &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.models.client_model</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.models.client_model</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">...databases.exts</span> <span class="kn">import</span> <span class="n">db</span>
+
+
+<div class="viewcode-block" id="Client"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client">[docs]</a><span class="k">class</span> <span class="nc">Client</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Client data model class describes the data structure of a client in the database.</span>
+
+<span class="sd">    :ivar id: Unique identifier for a client.</span>
+<span class="sd">    :type id: int</span>
+
+<span class="sd">    :ivar name: Name of the client.</span>
+<span class="sd">    :type name: str</span>
+
+<span class="sd">    :ivar surname: Surname of the client.</span>
+<span class="sd">    :type surname: str</span>
+
+<span class="sd">    :ivar email: Unique email for the client.</span>
+<span class="sd">    :type email: str</span>
+
+<span class="sd">    :ivar phone: Unique phone number of the client.</span>
+<span class="sd">    :type phone: str</span>
+
+<span class="sd">    :ivar passport_number: Unique passport number for the client.</span>
+<span class="sd">    :type passport_number: str</span>
+
+<span class="sd">    :ivar address: Address of the client.</span>
+<span class="sd">    :type address: str</span>
+
+<span class="sd">    :ivar birth_date: Date of birth of the client.</span>
+<span class="sd">    :type birth_date: datetime.date</span>
+
+<span class="sd">    :ivar registration_date: Date of registration for the client.</span>
+<span class="sd">    :type registration_date: datetime.date</span>
+
+<span class="sd">    :ivar rentals: List of rentals that the client has made.</span>
+<span class="sd">    :type rentals: list[rental]</span>
+
+<span class="sd">    :ivar SORT_ATTRIBUTES: A list of attributes on which we can sort the clients.</span>
+<span class="sd">    :type SORT_ATTRIBUTES: list[str]</span>
+
+<span class="sd">    :ivar QUERY_SORT_PARAMS: A dictionary defining the sort order based on certain key strings.</span>
+<span class="sd">                             Each key string corresponds to a certain sort order.</span>
+<span class="sd">    :type QUERY_SORT_PARAMS: dict[str, str]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">surname</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">phone</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">passport_number</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">60</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">birth_date</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Date</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">registration_date</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Date</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">rentals</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;Rental&#39;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s1">&#39;client&#39;</span><span class="p">)</span>
+
+    <span class="n">SORT_ATTRIBUTES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;surname&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;passport_number&quot;</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">,</span> <span class="s2">&quot;birth_date&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;registration_date&quot;</span><span class="p">]</span>
+
+    <span class="n">QUERY_SORT_PARAMS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;abc&quot;</span><span class="p">:</span> <span class="s2">&quot;asc&quot;</span><span class="p">,</span> <span class="s2">&quot;zyx&quot;</span><span class="p">:</span> <span class="s2">&quot;desc&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;lowest&quot;</span><span class="p">:</span> <span class="s2">&quot;asc&quot;</span><span class="p">,</span> <span class="s2">&quot;highest&quot;</span><span class="p">:</span> <span class="s2">&quot;desc&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;oldest&quot;</span><span class="p">:</span> <span class="s2">&quot;asc&quot;</span><span class="p">,</span> <span class="s2">&quot;latest&quot;</span><span class="p">:</span> <span class="s2">&quot;desc&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;Free&quot;</span><span class="p">:</span> <span class="s2">&quot;asc&quot;</span><span class="p">,</span> <span class="s2">&quot;Rented&quot;</span><span class="p">:</span> <span class="s2">&quot;desc&quot;</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method that returns a string representation of the Client instance.</span>
+
+<span class="sd">        :return: String representation of the Client instance.</span>
+<span class="sd">        :rtype: Client</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;Client-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+
+<div class="viewcode-block" id="Client.validate_name"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_name">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_name</span><span class="p">(</span><span class="n">client_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the provided client name.</span>
+
+<span class="sd">        :param client_name: Name of the client.</span>
+<span class="sd">        :type client_name: str</span>
+
+<span class="sd">        :return: Returns True if the name is a non-empty string, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">client_name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Client.validate_surname"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_surname">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_surname</span><span class="p">(</span><span class="n">client_surname</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the provided client surname.</span>
+
+<span class="sd">        :param client_surname: Surname of the client.</span>
+<span class="sd">        :type client_surname: str</span>
+
+<span class="sd">        :return: Returns True if the surname is a non-empty string, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">client_surname</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_surname</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_surname</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> \
+            <span class="k">else</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Client.validate_email"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_email">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_email</span><span class="p">(</span><span class="n">client_email</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the provided client email.</span>
+
+<span class="sd">        :param client_email: Email of the employee.</span>
+<span class="sd">        :type client_email: str</span>
+
+<span class="sd">        :return: Returns True if the email is a string that contains both &#39;@&#39; and &#39;.&#39;, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">client_email</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_email</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_email</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="ow">or</span> \
+            <span class="s1">&#39;@&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">client_email</span> <span class="ow">or</span> <span class="s1">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">client_email</span> <span class="k">else</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Client.validate_phone"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_phone">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_phone</span><span class="p">(</span><span class="n">client_phone</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the provided client phone.</span>
+
+<span class="sd">        :param client_phone: Phone number of the client.</span>
+<span class="sd">        :type client_phone: str</span>
+
+<span class="sd">        :return: Returns True if the phone number is a string of length at least 8 and contains &#39;+&#39;, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">client_phone</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_phone</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_phone</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="ow">or</span> \
+            <span class="s1">&#39;+&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">client_phone</span> <span class="k">else</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Client.validate_passport_number"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_passport_number">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_passport_number</span><span class="p">(</span><span class="n">client_passport_number</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">client_passport_number</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_passport_number</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> \
+            <span class="nb">len</span><span class="p">(</span><span class="n">client_passport_number</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="k">else</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Client.validate_address"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_address">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_address</span><span class="p">(</span><span class="n">client_address</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the address of the client.</span>
+
+<span class="sd">        :param client_address: Address of the client.</span>
+<span class="sd">        :type client_address: str</span>
+
+<span class="sd">        :return: True if the address is a string of length &gt;= 5 signs, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">client_address</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_address</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_address</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span> \
+            <span class="k">else</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Client.validate_birth_date"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_birth_date">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_birth_date</span><span class="p">(</span><span class="n">client_birth_date</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the birthdate of the client.</span>
+
+<span class="sd">        :param client_birth_date: Birthdate of the client.</span>
+<span class="sd">        :type client_birth_date: str</span>
+
+<span class="sd">        :return: True if the birthdate is a string of length of 10 signs, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">client_birth_date</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_birth_date</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> \
+            <span class="nb">len</span><span class="p">(</span><span class="n">client_birth_date</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">10</span> <span class="k">else</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Client.validate_sort_params"><a class="viewcode-back" href="../../../../../backend.src.app.models.html#backend.src.app.models.client_model.Client.validate_sort_params">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_sort_params</span><span class="p">(</span><span class="n">sort_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the provided sorting parameters.</span>
+
+<span class="sd">        :param sort_data: Dictionary of sorting parameters.</span>
+<span class="sd">        :type sort_data: dict</span>
+
+<span class="sd">        :return: Returns True if all keys and values are valid according to SORT_ATTRIBUTES and QUERY_SORT_PARAMS,</span>
+<span class="sd">                 False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">key</span> <span class="ow">in</span> <span class="n">Client</span><span class="o">.</span><span class="n">SORT_ATTRIBUTES</span> <span class="ow">and</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">Client</span><span class="o">.</span><span class="n">QUERY_SORT_PARAMS</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+                   <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sort_data</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

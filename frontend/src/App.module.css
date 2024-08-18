@@ -1,0 +1,115 @@
+.App {
+  background-color: #F5F5F5;
+  color: black;
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 150px;
+  z-index: 0;
+}
+
+.container {
+  width: 1420px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.initialPageContainer {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 49px;
+  width: 100%;
+}
+
+.subtitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;  
+  color: #3C404F;
+}
+
+
+@media (max-width: 1460px) {
+  .container {
+    width: 860px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@font-face {
+  font-family: "Fontspring";
+  src: url("./res/fonts/Fontspring-extralight.otf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Fontspring";
+  src: url("./res/fonts/Fontspring-light.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Fontspring";
+  src: url("./res/fonts/Fontspring-regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Fontspring";
+  src: url("./res/fonts/Fontspring-medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Fontspring";
+  src: url("./res/fonts/Fontspring-semibold.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Fontspring";
+  src: url("./res/fonts/Fontspring-bold.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Fontspring";
+  src: url("./res/fonts/Fontspring-extrabold.otf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./res/fonts/Montserrat-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./res/fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./res/fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./res/fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./res/fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+}

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.models package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.app.repositories package" href="backend.src.app.repositories.html" />
+    <link rel="prev" title="backend.src.app.controllers.rentals package" href="backend.src.app.controllers.rentals.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.models package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-models-package">
+<h1>backend.src.app.models package<a class="headerlink" href="#backend-src-app-models-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-backend.src.app.models.blacklisttoken_model">
+<span id="backend-src-app-models-blacklisttoken-model-module"></span><h2>backend.src.app.models.blacklisttoken_model module<a class="headerlink" href="#module-backend.src.app.models.blacklisttoken_model" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.models.blacklisttoken_model.BlacklistToken">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.models.blacklisttoken_model.</span></span><span class="sig-name descname"><span class="pre">BlacklistToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/blacklisttoken_model.html#BlacklistToken"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.blacklisttoken_model.BlacklistToken" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The BlacklistToken data model class describes the data structure of a blacklist token in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Unique identifier for a token.</p></li>
+<li><p><strong>jti</strong> – Unique JWT identifier (jti) for the token.</p></li>
+<li><p><strong>adding_time</strong> – The time when the token was added to the blacklist.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.blacklisttoken_model.BlacklistToken.adding_time">
+<span class="sig-name descname"><span class="pre">adding_time</span></span><a class="headerlink" href="#backend.src.app.models.blacklisttoken_model.BlacklistToken.adding_time" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.blacklisttoken_model.BlacklistToken.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#backend.src.app.models.blacklisttoken_model.BlacklistToken.id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.blacklisttoken_model.BlacklistToken.jti">
+<span class="sig-name descname"><span class="pre">jti</span></span><a class="headerlink" href="#backend.src.app.models.blacklisttoken_model.BlacklistToken.jti" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.blacklisttoken_model.BlacklistToken.query">
+<span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Query</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#backend.src.app.models.blacklisttoken_model.BlacklistToken.query" title="Permalink to this definition"></a></dt>
+<dd><p>A SQLAlchemy query for a model. Equivalent to <code class="docutils literal notranslate"><span class="pre">db.session.query(Model)</span></code>. Can be
+customized per-model by overriding <code class="xref py py-attr docutils literal notranslate"><span class="pre">query_class</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The query interface is considered legacy in SQLAlchemy. Prefer using
+<code class="docutils literal notranslate"><span class="pre">session.execute(select())</span></code> instead.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.models.client_model">
+<span id="backend-src-app-models-client-model-module"></span><h2>backend.src.app.models.client_model module<a class="headerlink" href="#module-backend.src.app.models.client_model" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.models.client_model.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Client data model class describes the data structure of a client in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Unique identifier for a client.</p></li>
+<li><p><strong>name</strong> – Name of the client.</p></li>
+<li><p><strong>surname</strong> – Surname of the client.</p></li>
+<li><p><strong>email</strong> – Unique email for the client.</p></li>
+<li><p><strong>phone</strong> – Unique phone number of the client.</p></li>
+<li><p><strong>passport_number</strong> – Unique passport number for the client.</p></li>
+<li><p><strong>address</strong> – Address of the client.</p></li>
+<li><p><strong>birth_date</strong> – Date of birth of the client.</p></li>
+<li><p><strong>registration_date</strong> – Date of registration for the client.</p></li>
+<li><p><strong>rentals</strong> – List of rentals that the client has made.</p></li>
+<li><p><strong>SORT_ATTRIBUTES</strong> – A list of attributes on which we can sort the clients.</p></li>
+<li><p><strong>QUERY_SORT_PARAMS</strong> – A dictionary defining the sort order based on certain key strings.
+Each key string corresponds to a certain sort order.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.QUERY_SORT_PARAMS">
+<span class="sig-name descname"><span class="pre">QUERY_SORT_PARAMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Free':</span> <span class="pre">'asc',</span> <span class="pre">'Rented':</span> <span class="pre">'desc',</span> <span class="pre">'abc':</span> <span class="pre">'asc',</span> <span class="pre">'highest':</span> <span class="pre">'desc',</span> <span class="pre">'latest':</span> <span class="pre">'desc',</span> <span class="pre">'lowest':</span> <span class="pre">'asc',</span> <span class="pre">'oldest':</span> <span class="pre">'asc',</span> <span class="pre">'zyx':</span> <span class="pre">'desc'}</span></em><a class="headerlink" href="#backend.src.app.models.client_model.Client.QUERY_SORT_PARAMS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.SORT_ATTRIBUTES">
+<span class="sig-name descname"><span class="pre">SORT_ATTRIBUTES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'name',</span> <span class="pre">'surname',</span> <span class="pre">'email',</span> <span class="pre">'phone',</span> <span class="pre">'passport_number',</span> <span class="pre">'address',</span> <span class="pre">'birth_date',</span> <span class="pre">'registration_date']</span></em><a class="headerlink" href="#backend.src.app.models.client_model.Client.SORT_ATTRIBUTES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.address">
+<span class="sig-name descname"><span class="pre">address</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.address" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.birth_date">
+<span class="sig-name descname"><span class="pre">birth_date</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.birth_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.email" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.passport_number">
+<span class="sig-name descname"><span class="pre">passport_number</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.passport_number" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.phone">
+<span class="sig-name descname"><span class="pre">phone</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.phone" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.query">
+<span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Query</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#backend.src.app.models.client_model.Client.query" title="Permalink to this definition"></a></dt>
+<dd><p>A SQLAlchemy query for a model. Equivalent to <code class="docutils literal notranslate"><span class="pre">db.session.query(Model)</span></code>. Can be
+customized per-model by overriding <code class="xref py py-attr docutils literal notranslate"><span class="pre">query_class</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The query interface is considered legacy in SQLAlchemy. Prefer using
+<code class="docutils literal notranslate"><span class="pre">session.execute(select())</span></code> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.registration_date">
+<span class="sig-name descname"><span class="pre">registration_date</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.registration_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.rentals">
+<span class="sig-name descname"><span class="pre">rentals</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.rentals" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.surname">
+<span class="sig-name descname"><span class="pre">surname</span></span><a class="headerlink" href="#backend.src.app.models.client_model.Client.surname" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_address">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_address</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_address" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the address of the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client_address</strong> (<em>str</em>) – Address of the client.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the address is a string of length &gt;= 5 signs, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_birth_date">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_birth_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_birth_date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_birth_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_birth_date" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the birthdate of the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client_birth_date</strong> (<em>str</em>) – Birthdate of the client.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the birthdate is a string of length of 10 signs, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_email">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_email</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_email" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided client email.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client_email</strong> (<em>str</em>) – Email of the employee.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the email is a string that contains both ‘&#64;’ and ‘.’, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_name">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_name" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided client name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client_name</strong> (<em>str</em>) – Name of the client.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the name is a non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_passport_number">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_passport_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_passport_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_passport_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_passport_number" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_phone">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_phone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_phone</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_phone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_phone" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided client phone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client_phone</strong> (<em>str</em>) – Phone number of the client.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the phone number is a string of length at least 8 and contains ‘+’, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_sort_params">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_sort_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_sort_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_sort_params" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided sorting parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort_data</strong> (<em>dict</em>) – Dictionary of sorting parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if all keys and values are valid according to SORT_ATTRIBUTES and QUERY_SORT_PARAMS,
+False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.client_model.Client.validate_surname">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_surname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_surname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/client_model.html#Client.validate_surname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.client_model.Client.validate_surname" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided client surname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client_surname</strong> (<em>str</em>) – Surname of the client.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the surname is a non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.models.employee_model">
+<span id="backend-src-app-models-employee-model-module"></span><h2>backend.src.app.models.employee_model module<a class="headerlink" href="#module-backend.src.app.models.employee_model" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.models.employee_model.</span></span><span class="sig-name descname"><span class="pre">Employee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Employee data model class describes the data structure of an employee in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Unique identifier for an employee.</p></li>
+<li><p><strong>name</strong> – Name of the employee.</p></li>
+<li><p><strong>surname</strong> – Surname of the employee.</p></li>
+<li><p><strong>email</strong> – Unique email for the employee.</p></li>
+<li><p><strong>password</strong> – Hashed password for the employee.</p></li>
+<li><p><strong>phone</strong> – Unique phone number of the employee.</p></li>
+<li><p><strong>salary</strong> – Salary of the employee.</p></li>
+<li><p><strong>position</strong> – Position of the employee, can be one of EMPLOYEE_POSITIONS.</p></li>
+<li><p><strong>rentals</strong> – List of rentals that the employee has conducted.</p></li>
+<li><p><strong>LATEST_RENTALS_COUNT</strong> – The number of the latest rentals to return.</p></li>
+<li><p><strong>EMPLOYEE_POSITIONS</strong> – A list of valid positions that an employee can have.</p></li>
+<li><p><strong>SORT_ATTRIBUTES</strong> – A list of attributes on which we can sort the employees.</p></li>
+<li><p><strong>QUERY_SORT_PARAMS</strong> – A dictionary defining the sort order based on certain key strings.
+Each key string corresponds to a certain sort order.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.EMPLOYEE_POSITIONS">
+<span class="sig-name descname"><span class="pre">EMPLOYEE_POSITIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Manager',</span> <span class="pre">'Assistant']</span></em><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.EMPLOYEE_POSITIONS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.LATEST_RENTALS_COUNT">
+<span class="sig-name descname"><span class="pre">LATEST_RENTALS_COUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.LATEST_RENTALS_COUNT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.QUERY_SORT_PARAMS">
+<span class="sig-name descname"><span class="pre">QUERY_SORT_PARAMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Free':</span> <span class="pre">'asc',</span> <span class="pre">'Rented':</span> <span class="pre">'desc',</span> <span class="pre">'abc':</span> <span class="pre">'asc',</span> <span class="pre">'highest':</span> <span class="pre">'desc',</span> <span class="pre">'latest':</span> <span class="pre">'desc',</span> <span class="pre">'lowest':</span> <span class="pre">'asc',</span> <span class="pre">'oldest':</span> <span class="pre">'asc',</span> <span class="pre">'zyx':</span> <span class="pre">'desc'}</span></em><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.QUERY_SORT_PARAMS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.SORT_ATTRIBUTES">
+<span class="sig-name descname"><span class="pre">SORT_ATTRIBUTES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'name',</span> <span class="pre">'surname',</span> <span class="pre">'email',</span> <span class="pre">'phone',</span> <span class="pre">'salary',</span> <span class="pre">'position']</span></em><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.SORT_ATTRIBUTES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.email" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.password" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.phone">
+<span class="sig-name descname"><span class="pre">phone</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.phone" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.position">
+<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.position" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.query">
+<span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Query</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.query" title="Permalink to this definition"></a></dt>
+<dd><p>A SQLAlchemy query for a model. Equivalent to <code class="docutils literal notranslate"><span class="pre">db.session.query(Model)</span></code>. Can be
+customized per-model by overriding <code class="xref py py-attr docutils literal notranslate"><span class="pre">query_class</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The query interface is considered legacy in SQLAlchemy. Prefer using
+<code class="docutils literal notranslate"><span class="pre">session.execute(select())</span></code> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.rentals">
+<span class="sig-name descname"><span class="pre">rentals</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.rentals" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.salary">
+<span class="sig-name descname"><span class="pre">salary</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.salary" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.surname">
+<span class="sig-name descname"><span class="pre">surname</span></span><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.surname" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.validate_email">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">employee_email</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee.validate_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.validate_email" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided employee email.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>employee_email</strong> (<em>str</em>) – Email of the employee.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the email is a string that contains both ‘&#64;’ and ‘.’, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.validate_name">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">employee_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee.validate_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.validate_name" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided employee name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>employee_name</strong> (<em>str</em>) – Name of the employee.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the name is a non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.validate_phone">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_phone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">employee_phone</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee.validate_phone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.validate_phone" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided employee phone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>employee_phone</strong> (<em>str</em>) – Phone number of the employee.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the phone number is a string of length at least 8 and contains ‘+’, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.validate_position">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">employee_position</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee.validate_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.validate_position" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided employee position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>employee_position</strong> (<em>str</em>) – Position of the employee.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the position is one of the valid EMPLOYEE_POSITIONS, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.validate_salary">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_salary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">employee_salary</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee.validate_salary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.validate_salary" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided employee salary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>employee_salary</strong> (<em>int</em>) – Salary of the employee.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the salary is a non-negative integer, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.validate_sort_params">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_sort_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee.validate_sort_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.validate_sort_params" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided sorting parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort_data</strong> (<em>dict</em>) – Dictionary of sorting parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if all keys and values are valid according to SORT_ATTRIBUTES and QUERY_SORT_PARAMS,
+False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.employee_model.Employee.validate_surname">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_surname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">employee_surname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/employee_model.html#Employee.validate_surname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.employee_model.Employee.validate_surname" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided employee surname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>employee_surname</strong> (<em>str</em>) – Surname of the employee.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the surname is a non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.models.equipment_model">
+<span id="backend-src-app-models-equipment-model-module"></span><h2>backend.src.app.models.equipment_model module<a class="headerlink" href="#module-backend.src.app.models.equipment_model" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.models.equipment_model.</span></span><span class="sig-name descname"><span class="pre">Equipment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Equipment class represents equipment in the rental system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inventory_number</strong> – The unique inventory number of the equipment. Acts as the primary key.</p></li>
+<li><p><strong>category</strong> – The category of the equipment (e.g., “Ski”, “Snowboard”, etc.).</p></li>
+<li><p><strong>manufacturer</strong> – The manufacturer of the equipment.</p></li>
+<li><p><strong>model</strong> – The model of the equipment.</p></li>
+<li><p><strong>size</strong> – The size of the equipment.</p></li>
+<li><p><strong>status</strong> – The current status of the equipment (e.g., “Free”, “Rented”, “Damaged”).</p></li>
+<li><p><strong>price_per_hour</strong> – The rental price per hour for the equipment.</p></li>
+<li><p><strong>description</strong> – A text description of the equipment.</p></li>
+<li><p><strong>registration_date</strong> – The date when the equipment was added to the system.</p></li>
+<li><p><strong>current_rental_id</strong> – The ID of the current rental if the equipment is rented, otherwise None.</p></li>
+<li><p><strong>EQUIPMENT_CATEGORIES</strong> – A list of valid categories that an equipment can belong to.</p></li>
+<li><p><strong>EQUIPMENT_STATUSES</strong> – A list of valid statuses that an equipment can have.</p></li>
+<li><p><strong>SORT_ATTRIBUTES</strong> – A list of attributes on which we can sort the equipments.</p></li>
+<li><p><strong>QUERY_SORT_PARAMS</strong> – A dictionary defining the sort order based on certain key strings.
+Each key string corresponds to a certain sort order.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.EQUIPMENT_CATEGORIES">
+<span class="sig-name descname"><span class="pre">EQUIPMENT_CATEGORIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Ski',</span> <span class="pre">'Snowboard',</span> <span class="pre">'Ski</span> <span class="pre">boots',</span> <span class="pre">'Snowboard</span> <span class="pre">boots',</span> <span class="pre">'Helmet',</span> <span class="pre">'Ski</span> <span class="pre">poles',</span> <span class="pre">'Ski</span> <span class="pre">suit']</span></em><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.EQUIPMENT_CATEGORIES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.EQUIPMENT_STATUSES">
+<span class="sig-name descname"><span class="pre">EQUIPMENT_STATUSES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Free',</span> <span class="pre">'Rented',</span> <span class="pre">'Damaged']</span></em><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.EQUIPMENT_STATUSES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.QUERY_SORT_PARAMS">
+<span class="sig-name descname"><span class="pre">QUERY_SORT_PARAMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Free':</span> <span class="pre">'asc',</span> <span class="pre">'Rented':</span> <span class="pre">'desc',</span> <span class="pre">'abc':</span> <span class="pre">'asc',</span> <span class="pre">'highest':</span> <span class="pre">'desc',</span> <span class="pre">'latest':</span> <span class="pre">'desc',</span> <span class="pre">'lowest':</span> <span class="pre">'asc',</span> <span class="pre">'oldest':</span> <span class="pre">'asc',</span> <span class="pre">'zyx':</span> <span class="pre">'desc'}</span></em><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.QUERY_SORT_PARAMS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.SORT_ATTRIBUTES">
+<span class="sig-name descname"><span class="pre">SORT_ATTRIBUTES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['inventory_number',</span> <span class="pre">'category',</span> <span class="pre">'manufacturer',</span> <span class="pre">'model',</span> <span class="pre">'size',</span> <span class="pre">'price_per_hour',</span> <span class="pre">'registration_date',</span> <span class="pre">'current_rental_id']</span></em><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.SORT_ATTRIBUTES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.category">
+<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.category" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.current_rental_id">
+<span class="sig-name descname"><span class="pre">current_rental_id</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.current_rental_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.description" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.inventory_number">
+<span class="sig-name descname"><span class="pre">inventory_number</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.inventory_number" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.manufacturer">
+<span class="sig-name descname"><span class="pre">manufacturer</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.manufacturer" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.price_per_hour">
+<span class="sig-name descname"><span class="pre">price_per_hour</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.price_per_hour" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.query">
+<span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Query</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.query" title="Permalink to this definition"></a></dt>
+<dd><p>A SQLAlchemy query for a model. Equivalent to <code class="docutils literal notranslate"><span class="pre">db.session.query(Model)</span></code>. Can be
+customized per-model by overriding <code class="xref py py-attr docutils literal notranslate"><span class="pre">query_class</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The query interface is considered legacy in SQLAlchemy. Prefer using
+<code class="docutils literal notranslate"><span class="pre">session.execute(select())</span></code> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.registration_date">
+<span class="sig-name descname"><span class="pre">registration_date</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.registration_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.size">
+<span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.status" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.validate_category">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipment_category</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment.validate_category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.validate_category" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the category of the equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>equipment_category</strong> (<em>str</em>) – The category of the equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the category is one of the EQUIPMENT_CATEGORIES, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.validate_description">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipment_description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment.validate_description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.validate_description" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the description of the equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>equipment_description</strong> (<em>str</em>) – The description of the equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the size is non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.validate_manufacturer">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_manufacturer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipment_manufacturer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment.validate_manufacturer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.validate_manufacturer" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the manufacturer of the equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>equipment_manufacturer</strong> (<em>str</em>) – The manufacturer of the equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the manufacturer is non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.validate_model">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipment_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment.validate_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.validate_model" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the model of the equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>equipment_model</strong> (<em>str</em>) – The manufacturer of the equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the model is non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.validate_price_per_hour">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_price_per_hour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipment_price_per_hour</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment.validate_price_per_hour"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.validate_price_per_hour" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the price per hour of the equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>equipment_price_per_hour</strong> (<em>int</em>) – The price per hour of the equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the size is non-negative integer, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.validate_size">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipment_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment.validate_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.validate_size" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the size of the equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>equipment_size</strong> (<em>str</em>) – The size of the equipment.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the size is non-empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.equipment_model.Equipment.validate_sort_params">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_sort_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/equipment_model.html#Equipment.validate_sort_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.equipment_model.Equipment.validate_sort_params" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided sorting parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort_data</strong> (<em>dict</em>) – Dictionary of sorting parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if all keys and values are valid according to SORT_ATTRIBUTES and QUERY_SORT_PARAMS,
+False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.models.rental_model">
+<span id="backend-src-app-models-rental-model-module"></span><h2>backend.src.app.models.rental_model module<a class="headerlink" href="#module-backend.src.app.models.rental_model" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.models.rental_model.</span></span><span class="sig-name descname"><span class="pre">Rental</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/rental_model.html#Rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.rental_model.Rental" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Rental data model class describes the data structure of a rental in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Unique identifier for a rental.</p></li>
+<li><p><strong>date_start</strong> – Start date of the rental.</p></li>
+<li><p><strong>date_end</strong> – End date of the rental.</p></li>
+<li><p><strong>payment_type</strong> – Type of payment for the rental. Possible types are “Cash”, “Card”, “Bank transfer”.</p></li>
+<li><p><strong>base_price</strong> – Base price for the rental.</p></li>
+<li><p><strong>is_closed</strong> – Indicates whether the rental is closed.</p></li>
+<li><p><strong>damage_fee</strong> – Damage fee associated with the rental.</p></li>
+<li><p><strong>late_return_fee</strong> – Late return fee associated with the rental.</p></li>
+<li><p><strong>description</strong> – Description of the rental.</p></li>
+<li><p><strong>employee_id</strong> – The id of the employee who handled the rental.</p></li>
+<li><p><strong>client_id</strong> – The id of the client who made the rental.</p></li>
+<li><p><strong>equipments</strong> – List of equipment that were rented.</p></li>
+<li><p><strong>RENTAL_PAYMENT_TYPES</strong> – A list of possible payment types for the rental.</p></li>
+<li><p><strong>SORT_ATTRIBUTES</strong> – A list of attributes on which we can sort the rentals.</p></li>
+<li><p><strong>QUERY_SORT_PARAMS</strong> – A dictionary defining the sort order based on certain key strings.
+Each key string corresponds to a certain sort order.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.QUERY_SORT_PARAMS">
+<span class="sig-name descname"><span class="pre">QUERY_SORT_PARAMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Free':</span> <span class="pre">'asc',</span> <span class="pre">'Rented':</span> <span class="pre">'desc',</span> <span class="pre">'abc':</span> <span class="pre">'asc',</span> <span class="pre">'highest':</span> <span class="pre">'desc',</span> <span class="pre">'latest':</span> <span class="pre">'desc',</span> <span class="pre">'lowest':</span> <span class="pre">'asc',</span> <span class="pre">'oldest':</span> <span class="pre">'asc',</span> <span class="pre">'zyx':</span> <span class="pre">'desc'}</span></em><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.QUERY_SORT_PARAMS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.RENTAL_PAYMENT_TYPES">
+<span class="sig-name descname"><span class="pre">RENTAL_PAYMENT_TYPES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Cash',</span> <span class="pre">'Card',</span> <span class="pre">'Bank</span> <span class="pre">transfer']</span></em><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.RENTAL_PAYMENT_TYPES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.SORT_ATTRIBUTES">
+<span class="sig-name descname"><span class="pre">SORT_ATTRIBUTES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['id',</span> <span class="pre">'date_start',</span> <span class="pre">'date_end',</span> <span class="pre">'payment_type',</span> <span class="pre">'base_price',</span> <span class="pre">'is_closed',</span> <span class="pre">'damage_fee',</span> <span class="pre">'late_return_fee',</span> <span class="pre">'description']</span></em><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.SORT_ATTRIBUTES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.base_price">
+<span class="sig-name descname"><span class="pre">base_price</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.base_price" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.client_id">
+<span class="sig-name descname"><span class="pre">client_id</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.client_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.damage_fee">
+<span class="sig-name descname"><span class="pre">damage_fee</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.damage_fee" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.date_end">
+<span class="sig-name descname"><span class="pre">date_end</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.date_end" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.date_start">
+<span class="sig-name descname"><span class="pre">date_start</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.date_start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.description" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.employee_id">
+<span class="sig-name descname"><span class="pre">employee_id</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.employee_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.equipments">
+<span class="sig-name descname"><span class="pre">equipments</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.equipments" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.is_closed">
+<span class="sig-name descname"><span class="pre">is_closed</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.is_closed" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.late_return_fee">
+<span class="sig-name descname"><span class="pre">late_return_fee</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.late_return_fee" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.payment_type">
+<span class="sig-name descname"><span class="pre">payment_type</span></span><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.payment_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.query">
+<span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Query</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.query" title="Permalink to this definition"></a></dt>
+<dd><p>A SQLAlchemy query for a model. Equivalent to <code class="docutils literal notranslate"><span class="pre">db.session.query(Model)</span></code>. Can be
+customized per-model by overriding <code class="xref py py-attr docutils literal notranslate"><span class="pre">query_class</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The query interface is considered legacy in SQLAlchemy. Prefer using
+<code class="docutils literal notranslate"><span class="pre">session.execute(select())</span></code> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.validate_description">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/rental_model.html#Rental.validate_description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.validate_description" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>description</strong> (<em>str</em>) – Description to be validated.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the description is not an empty string, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.validate_equipments">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_equipments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equipments</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/rental_model.html#Rental.validate_equipments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.validate_equipments" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided list of equipment for the rental.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>equipments</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – List of equipment for the rental.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the list is not empty, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.validate_fee">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_fee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fee</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/rental_model.html#Rental.validate_fee"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.validate_fee" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided fee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fee</strong> (<em>int</em>) – The fee to be validated.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the fee is an integer and is not less than zero, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.validate_payment_type">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_payment_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payment_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/rental_model.html#Rental.validate_payment_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.validate_payment_type" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided payment type for the rental.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>payment_type</strong> (<em>str</em>) – Type of payment for the rental.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the payment_type is a non-empty string and it’s within the allowed payment types,
+False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.models.rental_model.Rental.validate_sort_params">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_sort_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/models/rental_model.html#Rental.validate_sort_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.models.rental_model.Rental.validate_sort_params" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the provided sorting parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort_data</strong> (<em>dict</em>) – Dictionary of sorting parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if all keys and values are valid according to SORT_ATTRIBUTES and QUERY_SORT_PARAMS,
+False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.models" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.controllers.rentals.html" class="btn btn-neutral float-left" title="backend.src.app.controllers.rentals package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.app.repositories.html" class="btn btn-neutral float-right" title="backend.src.app.repositories package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

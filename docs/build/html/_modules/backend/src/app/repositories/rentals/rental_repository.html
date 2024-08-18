@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.repositories.rentals.rental_repository &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.repositories.rentals.rental_repository</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.repositories.rentals.rental_repository</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span> <span class="nn">....databases.exts</span> <span class="kn">import</span> <span class="n">db</span>
+<span class="kn">from</span> <span class="nn">...models</span> <span class="kn">import</span> <span class="n">Rental</span>
+
+
+<div class="viewcode-block" id="RentalRepository"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository">[docs]</a><span class="k">class</span> <span class="nc">RentalRepository</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The RentalRepository class encapsulates the logic necessary to access the database and</span>
+<span class="sd">    perform CRUD operations on the Rental model.</span>
+
+<span class="sd">    :ivar rental_id: Unique identifier of the rental.</span>
+<span class="sd">    :type rental_id: int</span>
+
+<span class="sd">    :ivar rental: Instance of Rental model.</span>
+<span class="sd">    :type rental: Rental</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rental_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize an instance of the RentalRepository class.</span>
+
+<span class="sd">        The constructor tries to find a Rental instance based on the provided rental_id.</span>
+<span class="sd">        If a Rental instance is found, it is assigned to the rental instance variable.</span>
+
+<span class="sd">        :param rental_id: Unique identifier of a rental. Used to retrieve an existing rental by ID.</span>
+<span class="sd">        :type rental_id: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental_id</span> <span class="o">=</span> <span class="n">rental_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_by_id</span><span class="p">()</span>
+
+<div class="viewcode-block" id="RentalRepository.save"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the current rental instance to the database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">date_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">is_closed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">damage_fee</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">late_return_fee</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="RentalRepository.delete"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete the current rental instance from the database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="RentalRepository.update"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">update_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the current rental instance based on the provided update data.</span>
+
+<span class="sd">        :param update_data: Dictionary containing new values for the rental&#39;s attributes.</span>
+<span class="sd">        :type update_data: dict[str, any]</span>
+
+<span class="sd">        :return: Returns True if the update was successful, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_update_data</span><span class="p">(</span><span class="n">update_data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">update_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_description&quot;</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="RentalRepository.close"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">close_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Close the current rental instance in the database.</span>
+
+<span class="sd">        :param close_data: Dictionary containing new values for the rental&#39;s attributes.</span>
+<span class="sd">        :type close_data: dict[str, any]</span>
+
+<span class="sd">        :return: Returns True if the closure was successful, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_close_data</span><span class="p">(</span><span class="n">close_data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">is_closed</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="n">close_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_damage_fee&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">damage_fee</span> <span class="o">=</span> <span class="n">close_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_damage_fee&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">close_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_late_return_fee&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">late_return_fee</span> <span class="o">=</span> <span class="n">close_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_late_return_fee&quot;</span><span class="p">)</span>
+
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="RentalRepository.get_rental"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.get_rental">[docs]</a>    <span class="k">def</span> <span class="nf">get_rental</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve the current rental instance.</span>
+
+<span class="sd">        :return: Returns the current rental instance or None if it doesn&#39;t exist.</span>
+<span class="sd">        :rtype: Rental or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span></div>
+
+<div class="viewcode-block" id="RentalRepository.get_rental_all_data"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.get_rental_all_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_rental_all_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve all data of the current rental instance.</span>
+
+<span class="sd">        :return: Returns a dictionary containing all data of the current rental instance. Contains following keys:</span>
+<span class="sd">                    - id (int): The rental&#39;s ID.</span>
+<span class="sd">                    - date_start (datetime.datetime): The rental&#39;s start date.</span>
+<span class="sd">                    - date_end (datetime.datetime): The rental&#39;s end date.</span>
+<span class="sd">                    - payment_type (str): The rental&#39;s payment type.</span>
+<span class="sd">                    - base_price (int): The rental&#39;s base price.</span>
+<span class="sd">                    - is_closed (bool): The rental&#39;s status.</span>
+<span class="sd">                    - damage_fee (int): The rental&#39;s damage fee.</span>
+<span class="sd">                    - late_return_fee (int): The rental&#39;s late return fee.</span>
+<span class="sd">                    - description (str): The rental&#39;s description.</span>
+<span class="sd">                    - employee_id (int): The ID of the employee who managed the rental.</span>
+<span class="sd">                    - client_id (int): The ID of the client who made the rental.</span>
+<span class="sd">        :rtype: dict[str, any]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;date_start&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">date_start</span><span class="p">,</span> <span class="s2">&quot;date_end&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">date_end</span><span class="p">,</span>
+                <span class="s2">&quot;payment_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">payment_type</span><span class="p">,</span> <span class="s2">&quot;base_price&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">base_price</span><span class="p">,</span>
+                <span class="s2">&quot;is_closed&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">is_closed</span><span class="p">,</span> <span class="s2">&quot;damage_fee&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">damage_fee</span><span class="p">,</span>
+                <span class="s2">&quot;late_return_fee&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">late_return_fee</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+                <span class="s2">&quot;employee_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">employee_id</span><span class="p">,</span> <span class="s2">&quot;client_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">client_id</span><span class="p">}</span></div>
+
+<div class="viewcode-block" id="RentalRepository.get_rental_full_data"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.get_rental_full_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_rental_full_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve full data of the current rental instance including rented equipments info.</span>
+
+<span class="sd">        :return: Returns a dictionary containing all data of the current rental instance. Contains following keys:</span>
+<span class="sd">                    - id (int): The rental&#39;s ID.</span>
+<span class="sd">                    - date_start (datetime): The rental&#39;s start date.</span>
+<span class="sd">                    - date_end (datetime): The rental&#39;s end date.</span>
+<span class="sd">                    - payment_type (str): The rental&#39;s payment type.</span>
+<span class="sd">                    - base_price (int): The rental&#39;s base price.</span>
+<span class="sd">                    - is_closed (bool): The rental&#39;s status.</span>
+<span class="sd">                    - damage_fee (int): The rental&#39;s damage fee.</span>
+<span class="sd">                    - late_return_fee (int): The rental&#39;s late return fee.</span>
+<span class="sd">                    - description (str): The rental&#39;s description.</span>
+<span class="sd">                    - employee_id (int): The ID of the employee who managed the rental.</span>
+<span class="sd">                    - client_id (int): The ID of the client who made the rental.</span>
+<span class="sd">                    - equipments (list[int]): The list of rented equipments IDs.</span>
+<span class="sd">        :rtype: dict[str, any]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rental_full_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rental_all_data</span><span class="p">()</span>
+        <span class="n">rental_full_data</span><span class="p">[</span><span class="s2">&quot;equipments&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_rented_equipments</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">rental_full_data</span></div>
+
+<div class="viewcode-block" id="RentalRepository.get_rental_equipments"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.rentals.html#backend.src.app.repositories.rentals.rental_repository.RentalRepository.get_rental_equipments">[docs]</a>    <span class="k">def</span> <span class="nf">get_rental_equipments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve the list of equipment IDs related to the current rental.</span>
+
+<span class="sd">        :return: A list of equipment IDs related to the current rental.</span>
+<span class="sd">        :rtype: list[int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_rented_equipments</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">_find_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve a rental by its ID.</span>
+
+<span class="sd">        :return: Returns the Rental instance with the provided ID, or None if it doesn&#39;t exist.</span>
+<span class="sd">        :rtype: Rental</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Rental</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rental_id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental_id</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_find_rented_equipments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve the list of equipments related to the current rental.</span>
+
+<span class="sd">        :return: Returns a list of equipments related to the current rental.</span>
+<span class="sd">        :rtype: list[int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rental</span><span class="o">.</span><span class="n">equipments</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_validate_update_data</span><span class="p">(</span><span class="n">rental_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the data provided for updating a rental.</span>
+
+<span class="sd">        :param rental_data: Dictionary containing new values for the rental&#39;s attributes.</span>
+<span class="sd">        :type rental_data: dict[str, any]</span>
+
+<span class="sd">        :return: Returns True if the provided data is valid, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Rental</span><span class="o">.</span><span class="n">validate_description</span><span class="p">(</span><span class="n">rental_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_description&quot;</span><span class="p">))</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_validate_close_data</span><span class="p">(</span><span class="n">rental_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the data provided for closing a rental.</span>
+
+<span class="sd">        :param rental_data: Dictionary containing new values for the rental&#39;s closing data.</span>
+<span class="sd">        :type rental_data: dict[str, any]</span>
+
+<span class="sd">        :return: Returns True if the provided data is valid, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">rental_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_damage_fee&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">rental_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_late_return_fee&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> \
+            <span class="k">else</span> <span class="n">Rental</span><span class="o">.</span><span class="n">validate_fee</span><span class="p">(</span><span class="n">rental_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_damage_fee&quot;</span><span class="p">))</span> <span class="ow">or</span> \
+            <span class="n">Rental</span><span class="o">.</span><span class="n">validate_fee</span><span class="p">(</span><span class="n">rental_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;new_late_return_fee&quot;</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

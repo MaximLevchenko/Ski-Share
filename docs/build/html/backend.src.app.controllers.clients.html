@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.controllers.clients package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.app.controllers.employees package" href="backend.src.app.controllers.employees.html" />
+    <link rel="prev" title="backend.src.app.controllers.auth package" href="backend.src.app.controllers.auth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.controllers.html">backend.src.app.controllers package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.controllers.clients package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.controllers.clients.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-controllers-clients-package">
+<h1>backend.src.app.controllers.clients package<a class="headerlink" href="#backend-src-app-controllers-clients-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-backend.src.app.controllers.clients.client_controller">
+<span id="backend-src-app-controllers-clients-client-controller-module"></span><h2>backend.src.app.controllers.clients.client_controller module<a class="headerlink" href="#module-backend.src.app.controllers.clients.client_controller" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.client_controller.ClientController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.controllers.clients.client_controller.</span></span><span class="sig-name descname"><span class="pre">ClientController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/client_controller.html#ClientController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.client_controller.ClientController" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The ClientController class provides methods for managing client data.</p>
+<p>This class acts as a controller for validating, updating, deleting, and preparing responses related to a client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> – The ID of the client.</p></li>
+<li><p><strong>update_data</strong> – The data to update for the client.</p></li>
+<li><p><strong>client_service</strong> – An instance of the ClientService class for managing client data.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.client_controller.ClientController.create_response_with_client_data">
+<span class="sig-name descname"><span class="pre">create_response_with_client_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/client_controller.html#ClientController.create_response_with_client_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.client_controller.ClientController.create_response_with_client_data" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response containing all data about the client.</p>
+<p>This method uses the client service to retrieve all data about the client and prepares a response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing all data about the client and HTTP status code of 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, any], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.client_controller.ClientController.create_response_with_successful_delete_message">
+<span class="sig-name descname"><span class="pre">create_response_with_successful_delete_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/client_controller.html#ClientController.create_response_with_successful_delete_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.client_controller.ClientController.create_response_with_successful_delete_message" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response with a successful delete message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing a success message and HTTP status code of 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.client_controller.ClientController.create_response_with_successful_update_message">
+<span class="sig-name descname"><span class="pre">create_response_with_successful_update_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/client_controller.html#ClientController.create_response_with_successful_update_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.client_controller.ClientController.create_response_with_successful_update_message" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response with a successful update message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing a success message and HTTP status code of 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.client_controller.ClientController.delete_client">
+<span class="sig-name descname"><span class="pre">delete_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/client_controller.html#ClientController.delete_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.client_controller.ClientController.delete_client" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the client.</p>
+<p>This method uses the client service to delete the client based on their ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.client_controller.ClientController.update_client">
+<span class="sig-name descname"><span class="pre">update_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/client_controller.html#ClientController.update_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.client_controller.ClientController.update_client" title="Permalink to this definition"></a></dt>
+<dd><p>Update the client’s data.</p>
+<p>This method uses the client service to update the client’s data.
+If the update data is invalid, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the client update data is invalid and HTTP status code 400.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.client_controller.ClientController.validate_client">
+<span class="sig-name descname"><span class="pre">validate_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/client_controller.html#ClientController.validate_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.client_controller.ClientController.validate_client" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the client’s existence.</p>
+<p>This method uses the client service to validate the existence of the client based on their ID.
+If the client does not exist, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the client does not exist and HTTP status code 404.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.controllers.clients.clients_controller">
+<span id="backend-src-app-controllers-clients-clients-controller-module"></span><h2>backend.src.app.controllers.clients.clients_controller module<a class="headerlink" href="#module-backend.src.app.controllers.clients.clients_controller" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.clients_controller.ClientsController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.controllers.clients.clients_controller.</span></span><span class="sig-name descname"><span class="pre">ClientsController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/clients_controller.html#ClientsController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.clients_controller.ClientsController" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The ClientsController class provides methods for handling client-related requests.</p>
+<p>This class acts as a controller that uses the ClientsService for creating a new client
+and preparing data related to all clients.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_data</strong> – The data for creating a new client.</p></li>
+<li><p><strong>clients_service</strong> – An instance of the ClientsService class for managing clients’ data.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.clients_controller.ClientsController.create_client">
+<span class="sig-name descname"><span class="pre">create_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/clients_controller.html#ClientsController.create_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.clients_controller.ClientsController.create_client" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new client.</p>
+<p>This method uses the clients service to create a new client with the provided data.
+If the client data is invalid, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the client data is invalid with HTTP code 400.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.clients_controller.ClientsController.create_response_with_clients_data">
+<span class="sig-name descname"><span class="pre">create_response_with_clients_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/clients_controller.html#ClientsController.create_response_with_clients_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.clients_controller.ClientsController.create_response_with_clients_data" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare a response containing data about all clients.</p>
+<p>This method uses the clients service to retrieve data about all clients.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple where the first item is a list of data about all clients and
+the second item is the HTTP status code 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[list[dict[str, any]], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.clients_controller.ClientsController.create_response_with_successful_create_message">
+<span class="sig-name descname"><span class="pre">create_response_with_successful_create_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/clients_controller.html#ClientsController.create_response_with_successful_create_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.clients_controller.ClientsController.create_response_with_successful_create_message" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare a response containing a success message for client creation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple where the first item is a dictionary containing a success message and
+the second item is the HTTP status code 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.controllers.clients.clients_sort_controller">
+<span id="backend-src-app-controllers-clients-clients-sort-controller-module"></span><h2>backend.src.app.controllers.clients.clients_sort_controller module<a class="headerlink" href="#module-backend.src.app.controllers.clients.clients_sort_controller" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.clients_sort_controller.ClientsSortController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.controllers.clients.clients_sort_controller.</span></span><span class="sig-name descname"><span class="pre">ClientsSortController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/clients_sort_controller.html#ClientsSortController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.clients_sort_controller.ClientsSortController" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The ClientsSortController class provides methods for sorting clients and creating an appropriate response.</p>
+<p>This class acts as a controller for handling requests related to sorting clients.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort_data</strong> – The data specifying how clients should be sorted.</p></li>
+<li><p><strong>sorted_clients</strong> – The sorted client data.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.clients_sort_controller.ClientsSortController.create_response_with_sorted_clients_data">
+<span class="sig-name descname"><span class="pre">create_response_with_sorted_clients_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/clients_sort_controller.html#ClientsSortController.create_response_with_sorted_clients_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.clients_sort_controller.ClientsSortController.create_response_with_sorted_clients_data" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response containing the sorted client data.</p>
+<p>This method prepares a response with the sorted client data.
+The response includes a 200 status code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The response containing the sorted client data and a 200 status code.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[list[dict[str, any]], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.clients.clients_sort_controller.ClientsSortController.sort_clients">
+<span class="sig-name descname"><span class="pre">sort_clients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/clients/clients_sort_controller.html#ClientsSortController.sort_clients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.clients.clients_sort_controller.ClientsSortController.sort_clients" title="Permalink to this definition"></a></dt>
+<dd><p>Sort client data based on the provided parameters.</p>
+<p>This method uses the ClientsSortService to sort all clients based on the sorting data.
+If the sorting fails, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the sorting fails due to invalid sort QUERY parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.controllers.clients">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.controllers.clients" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.controllers.auth.html" class="btn btn-neutral float-left" title="backend.src.app.controllers.auth package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.app.controllers.employees.html" class="btn btn-neutral float-right" title="backend.src.app.controllers.employees package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

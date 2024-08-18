@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.routes package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.app.routes.auth package" href="backend.src.app.routes.auth.html" />
+    <link rel="prev" title="backend.src.app.repositories.rentals package" href="backend.src.app.repositories.rentals.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.routes package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.routes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-routes-package">
+<h1>backend.src.app.routes package<a class="headerlink" href="#backend-src-app-routes-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.routes.auth.html">backend.src.app.routes.auth package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.auth.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.auth.html#module-backend.src.app.routes.auth.auth_route">backend.src.app.routes.auth.auth_route module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.CurrentEmployeeRouter"><code class="docutils literal notranslate"><span class="pre">CurrentEmployeeRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.CurrentEmployeeRouter.get"><code class="docutils literal notranslate"><span class="pre">CurrentEmployeeRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.CurrentEmployeeRouter.methods"><code class="docutils literal notranslate"><span class="pre">CurrentEmployeeRouter.methods</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LoginRouter"><code class="docutils literal notranslate"><span class="pre">LoginRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LoginRouter.methods"><code class="docutils literal notranslate"><span class="pre">LoginRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LoginRouter.post"><code class="docutils literal notranslate"><span class="pre">LoginRouter.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LogoutRouter"><code class="docutils literal notranslate"><span class="pre">LogoutRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LogoutRouter.get"><code class="docutils literal notranslate"><span class="pre">LogoutRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.LogoutRouter.methods"><code class="docutils literal notranslate"><span class="pre">LogoutRouter.methods</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.RefreshRouter"><code class="docutils literal notranslate"><span class="pre">RefreshRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.RefreshRouter.get"><code class="docutils literal notranslate"><span class="pre">RefreshRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_route.RefreshRouter.methods"><code class="docutils literal notranslate"><span class="pre">RefreshRouter.methods</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.auth.html#module-backend.src.app.routes.auth.auth_serialization_models">backend.src.app.routes.auth.auth_serialization_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_serialization_models.create_current_user_get_model"><code class="docutils literal notranslate"><span class="pre">create_current_user_get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_serialization_models.create_login_get_model"><code class="docutils literal notranslate"><span class="pre">create_login_get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_serialization_models.create_login_post_model"><code class="docutils literal notranslate"><span class="pre">create_login_post_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.auth.html#backend.src.app.routes.auth.auth_serialization_models.create_refresh_get_model"><code class="docutils literal notranslate"><span class="pre">create_refresh_get_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.auth.html#module-backend.src.app.routes.auth">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.routes.clients.html">backend.src.app.routes.clients package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.clients.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.clients.html#module-backend.src.app.routes.clients.clients_route">backend.src.app.routes.clients.clients_route module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientRouter"><code class="docutils literal notranslate"><span class="pre">ClientRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientRouter.delete"><code class="docutils literal notranslate"><span class="pre">ClientRouter.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientRouter.get"><code class="docutils literal notranslate"><span class="pre">ClientRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientRouter.methods"><code class="docutils literal notranslate"><span class="pre">ClientRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientRouter.put"><code class="docutils literal notranslate"><span class="pre">ClientRouter.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientsRouter"><code class="docutils literal notranslate"><span class="pre">ClientsRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientsRouter.get"><code class="docutils literal notranslate"><span class="pre">ClientsRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientsRouter.methods"><code class="docutils literal notranslate"><span class="pre">ClientsRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientsRouter.post"><code class="docutils literal notranslate"><span class="pre">ClientsRouter.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientsSortRouter"><code class="docutils literal notranslate"><span class="pre">ClientsSortRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientsSortRouter.get"><code class="docutils literal notranslate"><span class="pre">ClientsSortRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_route.ClientsSortRouter.methods"><code class="docutils literal notranslate"><span class="pre">ClientsSortRouter.methods</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.clients.html#module-backend.src.app.routes.clients.clients_serialization_models">backend.src.app.routes.clients.clients_serialization_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_serialization_models.create_client_get_model"><code class="docutils literal notranslate"><span class="pre">create_client_get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_serialization_models.create_client_post_model"><code class="docutils literal notranslate"><span class="pre">create_client_post_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.clients.html#backend.src.app.routes.clients.clients_serialization_models.create_client_update_model"><code class="docutils literal notranslate"><span class="pre">create_client_update_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.clients.html#module-backend.src.app.routes.clients">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.routes.employees.html">backend.src.app.routes.employees package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.employees.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.employees.html#module-backend.src.app.routes.employees.employees_route">backend.src.app.routes.employees.employees_route module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeeRouter"><code class="docutils literal notranslate"><span class="pre">EmployeeRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeeRouter.delete"><code class="docutils literal notranslate"><span class="pre">EmployeeRouter.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeeRouter.get"><code class="docutils literal notranslate"><span class="pre">EmployeeRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeeRouter.methods"><code class="docutils literal notranslate"><span class="pre">EmployeeRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeeRouter.put"><code class="docutils literal notranslate"><span class="pre">EmployeeRouter.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeesRouter"><code class="docutils literal notranslate"><span class="pre">EmployeesRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeesRouter.get"><code class="docutils literal notranslate"><span class="pre">EmployeesRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeesRouter.methods"><code class="docutils literal notranslate"><span class="pre">EmployeesRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeesRouter.post"><code class="docutils literal notranslate"><span class="pre">EmployeesRouter.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeesSortRouter"><code class="docutils literal notranslate"><span class="pre">EmployeesSortRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeesSortRouter.get"><code class="docutils literal notranslate"><span class="pre">EmployeesSortRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_route.EmployeesSortRouter.methods"><code class="docutils literal notranslate"><span class="pre">EmployeesSortRouter.methods</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.employees.html#module-backend.src.app.routes.employees.employees_serialization_models">backend.src.app.routes.employees.employees_serialization_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_serialization_models.create_employee_get_model"><code class="docutils literal notranslate"><span class="pre">create_employee_get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_serialization_models.create_employee_post_model"><code class="docutils literal notranslate"><span class="pre">create_employee_post_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_serialization_models.create_employee_profile_model"><code class="docutils literal notranslate"><span class="pre">create_employee_profile_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.employees.html#backend.src.app.routes.employees.employees_serialization_models.create_employee_update_model"><code class="docutils literal notranslate"><span class="pre">create_employee_update_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.employees.html#module-backend.src.app.routes.employees">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.routes.equipments.html">backend.src.app.routes.equipments package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.equipments.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.equipments.html#module-backend.src.app.routes.equipments.equipments_route">backend.src.app.routes.equipments.equipments_route module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter"><code class="docutils literal notranslate"><span class="pre">EquipmentDamagedRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter.get"><code class="docutils literal notranslate"><span class="pre">EquipmentDamagedRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentDamagedRouter.methods"><code class="docutils literal notranslate"><span class="pre">EquipmentDamagedRouter.methods</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter"><code class="docutils literal notranslate"><span class="pre">EquipmentRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.delete"><code class="docutils literal notranslate"><span class="pre">EquipmentRouter.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.get"><code class="docutils literal notranslate"><span class="pre">EquipmentRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.methods"><code class="docutils literal notranslate"><span class="pre">EquipmentRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentRouter.put"><code class="docutils literal notranslate"><span class="pre">EquipmentRouter.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter"><code class="docutils literal notranslate"><span class="pre">EquipmentsRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.get"><code class="docutils literal notranslate"><span class="pre">EquipmentsRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.methods"><code class="docutils literal notranslate"><span class="pre">EquipmentsRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsRouter.post"><code class="docutils literal notranslate"><span class="pre">EquipmentsRouter.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter"><code class="docutils literal notranslate"><span class="pre">EquipmentsSortRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter.get"><code class="docutils literal notranslate"><span class="pre">EquipmentsSortRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_route.EquipmentsSortRouter.methods"><code class="docutils literal notranslate"><span class="pre">EquipmentsSortRouter.methods</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.equipments.html#module-backend.src.app.routes.equipments.equipments_serialization_models">backend.src.app.routes.equipments.equipments_serialization_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_get_model"><code class="docutils literal notranslate"><span class="pre">create_equipment_get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_post_model"><code class="docutils literal notranslate"><span class="pre">create_equipment_post_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.equipments.html#backend.src.app.routes.equipments.equipments_serialization_models.create_equipment_update_model"><code class="docutils literal notranslate"><span class="pre">create_equipment_update_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.equipments.html#module-backend.src.app.routes.equipments">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backend.src.app.routes.rentals.html">backend.src.app.routes.rentals package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.rentals.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.rentals.html#module-backend.src.app.routes.rentals.rentals_route">backend.src.app.routes.rentals.rentals_route module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalCloseRouter"><code class="docutils literal notranslate"><span class="pre">RentalCloseRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalCloseRouter.methods"><code class="docutils literal notranslate"><span class="pre">RentalCloseRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalCloseRouter.put"><code class="docutils literal notranslate"><span class="pre">RentalCloseRouter.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalDescriptionRouter"><code class="docutils literal notranslate"><span class="pre">RentalDescriptionRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalDescriptionRouter.methods"><code class="docutils literal notranslate"><span class="pre">RentalDescriptionRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalDescriptionRouter.put"><code class="docutils literal notranslate"><span class="pre">RentalDescriptionRouter.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalRouter"><code class="docutils literal notranslate"><span class="pre">RentalRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalRouter.delete"><code class="docutils literal notranslate"><span class="pre">RentalRouter.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalRouter.get"><code class="docutils literal notranslate"><span class="pre">RentalRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalRouter.methods"><code class="docutils literal notranslate"><span class="pre">RentalRouter.methods</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsRouter"><code class="docutils literal notranslate"><span class="pre">RentalsRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsRouter.get"><code class="docutils literal notranslate"><span class="pre">RentalsRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsRouter.methods"><code class="docutils literal notranslate"><span class="pre">RentalsRouter.methods</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsRouter.post"><code class="docutils literal notranslate"><span class="pre">RentalsRouter.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsSortRouter"><code class="docutils literal notranslate"><span class="pre">RentalsSortRouter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsSortRouter.get"><code class="docutils literal notranslate"><span class="pre">RentalsSortRouter.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsSortRouter.methods"><code class="docutils literal notranslate"><span class="pre">RentalsSortRouter.methods</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.rentals.html#module-backend.src.app.routes.rentals.rentals_serialization_models">backend.src.app.routes.rentals.rentals_serialization_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_serialization_models.create_rental_description_model"><code class="docutils literal notranslate"><span class="pre">create_rental_description_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_serialization_models.create_rental_fees_model"><code class="docutils literal notranslate"><span class="pre">create_rental_fees_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_serialization_models.create_rental_full_model"><code class="docutils literal notranslate"><span class="pre">create_rental_full_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_serialization_models.create_rental_get_model"><code class="docutils literal notranslate"><span class="pre">create_rental_get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_serialization_models.create_rental_post_model"><code class="docutils literal notranslate"><span class="pre">create_rental_post_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.src.app.routes.rentals.html#module-backend.src.app.routes.rentals">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-backend.src.app.routes">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.routes" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.repositories.rentals.html" class="btn btn-neutral float-left" title="backend.src.app.repositories.rentals package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.app.routes.auth.html" class="btn btn-neutral float-right" title="backend.src.app.routes.auth package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

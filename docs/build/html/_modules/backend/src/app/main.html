@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.main &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.main</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.main</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
+<span class="kn">from</span> <span class="nn">flask_jwt_extended</span> <span class="kn">import</span> <span class="n">JWTManager</span>
+<span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>
+<span class="kn">from</span> <span class="nn">flask_restx</span> <span class="kn">import</span> <span class="n">Api</span>
+
+<span class="kn">from</span> <span class="nn">..databases</span> <span class="kn">import</span> <span class="n">db</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Employee</span><span class="p">,</span> <span class="n">Client</span><span class="p">,</span> <span class="n">Equipment</span><span class="p">,</span> <span class="n">Rental</span><span class="p">,</span> <span class="n">BlacklistToken</span><span class="p">,</span> <span class="n">BlacklistToken</span> <span class="k">as</span> <span class="n">blacklist_tokens_table</span>
+<span class="kn">from</span> <span class="nn">.routes</span> <span class="kn">import</span> <span class="n">auth_namespace</span><span class="p">,</span> <span class="n">clients_namespace</span><span class="p">,</span> <span class="n">employees_namespace</span><span class="p">,</span> <span class="n">equipments_namespace</span><span class="p">,</span> <span class="n">rentals_namespace</span>
+
+
+<div class="viewcode-block" id="create_app"><a class="viewcode-back" href="../../../../backend.src.app.html#backend.src.app.main.create_app">[docs]</a><span class="k">def</span> <span class="nf">create_app</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a Flask application instance.</span>
+
+<span class="sd">    This function handles the setup and initialization of major components for the app, including:</span>
+
+<span class="sd">    - Flask: The core framework.</span>
+<span class="sd">    - CORS (Cross-Origin Resource Sharing): Handles potential issues from making</span>
+<span class="sd">      requests to the server from different origins.</span>
+<span class="sd">    - Flask-SQLAlchemy: Initializes the database component.</span>
+<span class="sd">    - Flask-Migrate: Handles database migrations.</span>
+<span class="sd">    - JWTManager: Handles JSON Web Tokens for authentication.</span>
+<span class="sd">    - Flask-Restx and Namespaces: For easy creation of REST APIs.</span>
+<span class="sd">    - Shell context: Simplifies shell context for Flask shell.</span>
+
+<span class="sd">    :param config: The configuration object for Flask.</span>
+<span class="sd">    :return: Flask app instance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create Flask app instance.</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+    <span class="c1"># Load config from config object.</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="c1"># Enable CORS for the app.</span>
+    <span class="n">CORS</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">supports_credentials</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Initialize SQLAlchemy with app.</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="c1"># Initialize Flask-Migrate for handling migrations.</span>
+    <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+    <span class="c1"># Setup the Flask-JWT-Extended extension.</span>
+    <span class="n">jwt_manager</span> <span class="o">=</span> <span class="n">JWTManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+    <span class="nd">@jwt_manager</span><span class="o">.</span><span class="n">token_in_blocklist_loader</span>
+    <span class="k">def</span> <span class="nf">check_if_token_in_blacklist</span><span class="p">(</span><span class="n">jwt_header</span><span class="p">,</span> <span class="n">jwt_payload</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the current JWT token is in the blacklist.</span>
+
+<span class="sd">        :param jwt_header: The header of the JWT.</span>
+<span class="sd">        :param jwt_payload: The payload of the JWT.</span>
+
+<span class="sd">        :return: Boolean indicating if the token is blacklisted.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">jti</span> <span class="o">=</span> <span class="n">jwt_payload</span><span class="p">[</span><span class="s2">&quot;jti&quot;</span><span class="p">]</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">blacklist_tokens_table</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">jti</span><span class="o">=</span><span class="n">jti</span><span class="p">)</span><span class="o">.</span><span class="n">scalar</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">token</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="c1"># Initialize Flask-Restx Api.</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;/docs&#39;</span><span class="p">)</span>
+    <span class="c1"># Add namespaces.</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_namespace</span><span class="p">(</span><span class="n">auth_namespace</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_namespace</span><span class="p">(</span><span class="n">clients_namespace</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_namespace</span><span class="p">(</span><span class="n">employees_namespace</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_namespace</span><span class="p">(</span><span class="n">equipments_namespace</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_namespace</span><span class="p">(</span><span class="n">rentals_namespace</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">shell_context_processor</span>
+    <span class="k">def</span> <span class="nf">make_shell_context</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make context for flask shell command.</span>
+
+<span class="sd">        :return: dictionary with context data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;db&quot;</span><span class="p">:</span> <span class="n">db</span><span class="p">,</span> <span class="s2">&quot;Employee&quot;</span><span class="p">:</span> <span class="n">Employee</span><span class="p">,</span> <span class="s2">&quot;Client&quot;</span><span class="p">:</span> <span class="n">Client</span><span class="p">,</span> <span class="s2">&quot;Equipment&quot;</span><span class="p">:</span> <span class="n">Equipment</span><span class="p">,</span> <span class="s2">&quot;Rental&quot;</span><span class="p">:</span> <span class="n">Rental</span><span class="p">,</span>
+                <span class="s2">&quot;BlacklistToken&quot;</span><span class="p">:</span> <span class="n">BlacklistToken</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">app</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

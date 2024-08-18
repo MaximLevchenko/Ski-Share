@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.repositories.clients.clients_repository &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.repositories.clients.clients_repository</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.repositories.clients.clients_repository</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">text</span>
+
+<span class="kn">from</span> <span class="nn">...models</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">....databases.exts</span> <span class="kn">import</span> <span class="n">db</span>
+
+
+<div class="viewcode-block" id="ClientsRepository"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.clients_repository.ClientsRepository">[docs]</a><span class="k">class</span> <span class="nc">ClientsRepository</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The ClientsRepository class provides methods for creating, retrieving, and sorting Client objects.</span>
+
+<span class="sd">    This class acts as a repository and uses the Client model to perform operations related to clients.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">create_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize a new Clients Repository.</span>
+
+<span class="sd">        :param create_data: Optional dictionary containing the information about a client for creating a new client.</span>
+<span class="sd">        :type create_data: dict[str, any] or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_data</span> <span class="o">=</span> <span class="n">create_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clients_data</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="ClientsRepository.create"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.clients_repository.ClientsRepository.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a Client instance.</span>
+
+<span class="sd">        This method takes the client data provided during the initialization of the repository, validates it,</span>
+<span class="sd">        and if valid, creates a Client instance.</span>
+
+<span class="sd">        :return: True if the client was created, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_create_data</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="n">new_client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+            <span class="n">surname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="p">[</span><span class="s2">&quot;surname&quot;</span><span class="p">],</span>
+            <span class="n">email</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">],</span>
+            <span class="n">phone</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">],</span>
+            <span class="n">passport_number</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="p">[</span><span class="s2">&quot;passport_number&quot;</span><span class="p">],</span>
+            <span class="n">address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">],</span>
+            <span class="n">birth_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="p">[</span><span class="s2">&quot;birth_date&quot;</span><span class="p">],</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span>
+            <span class="n">registration_date</span><span class="o">=</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_client</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="ClientsRepository.get_all"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.clients_repository.ClientsRepository.get_all">[docs]</a>    <span class="k">def</span> <span class="nf">get_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves all Client instances.</span>
+
+<span class="sd">        This method fetches all the Client instances from the database and stores the result.</span>
+
+<span class="sd">        :return: A list of all Client instances.</span>
+<span class="sd">        :rtype: list[Client]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clients_data</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clients_data</span></div>
+
+<div class="viewcode-block" id="ClientsRepository.sort_all"><a class="viewcode-back" href="../../../../../../backend.src.app.repositories.clients.html#backend.src.app.repositories.clients.clients_repository.ClientsRepository.sort_all">[docs]</a>    <span class="k">def</span> <span class="nf">sort_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sort_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sorts all Client instances based on the provided sorting parameters and stores the result.</span>
+
+<span class="sd">        :param sort_data: Dictionary containing the sorting parameters.</span>
+<span class="sd">        :type sort_data: dict[str, any]</span>
+
+<span class="sd">        :return: A sorted list of all Client instances if the sorting parameters are valid, None otherwise.</span>
+<span class="sd">        :rtype: list[Client] or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clients_data</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">Client</span><span class="o">.</span><span class="n">validate_sort_params</span><span class="p">(</span><span class="n">sort_data</span><span class="p">)</span> <span class="k">else</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_prepare_clients_text_query</span><span class="p">(</span><span class="n">sort_data</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clients_data</span></div>
+
+    <span class="k">def</span> <span class="nf">_prepare_clients_text_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sort_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Prepare a text query for sorting client data based on the provided parameters.</span>
+
+<span class="sd">        This method generates a text query string using the sort_data dictionary.</span>
+<span class="sd">        The sort_data items should contain the key-value pairs where the key is the column name</span>
+<span class="sd">        and the value is the sort direction (&#39;asc&#39; or &#39;desc&#39;).</span>
+
+<span class="sd">        :param sort_data: The data specifying how clients should be sorted.</span>
+<span class="sd">        :type sort_data: dict[str, any]</span>
+
+<span class="sd">        :return: The text query string for sorting client data.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sort_text_query</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">Client</span><span class="o">.</span><span class="n">QUERY_SORT_PARAMS</span><span class="p">[</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sort_data</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">text</span><span class="p">(</span><span class="n">sort_text_query</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_validate_create_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validates the data for creating a Client instance.</span>
+
+<span class="sd">        This method takes the client data provided during the initialization of the repository and validates this data.</span>
+<span class="sd">        It checks the validation criteria defined in the Client model for each data field.</span>
+
+<span class="sd">        :return: True if the input data is valid, False otherwise.</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Client</span><span class="o">.</span><span class="n">validate_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_surname</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;surname&quot;</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_email</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_phone</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;phone&quot;</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_passport_number</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;passport_number&quot;</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_address</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;address&quot;</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">validate_birth_date</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;birth_date&quot;</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">Client</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">create_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

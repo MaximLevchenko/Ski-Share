@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.controllers.rentals package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.app.models package" href="backend.src.app.models.html" />
+    <link rel="prev" title="backend.src.app.controllers.exceptions package" href="backend.src.app.controllers.exceptions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.controllers.html">backend.src.app.controllers package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.controllers.rentals package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.controllers.rentals.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-controllers-rentals-package">
+<h1>backend.src.app.controllers.rentals package<a class="headerlink" href="#backend-src-app-controllers-rentals-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-backend.src.app.controllers.rentals.rental_controller">
+<span id="backend-src-app-controllers-rentals-rental-controller-module"></span><h2>backend.src.app.controllers.rentals.rental_controller module<a class="headerlink" href="#module-backend.src.app.controllers.rentals.rental_controller" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.controllers.rentals.rental_controller.</span></span><span class="sig-name descname"><span class="pre">RentalController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rental_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The RentalController class provides methods for managing rental data.</p>
+<p>This class acts as a controller for validating, updating, deleting, and preparing responses related to a rental.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rental_id</strong> – The ID of the rental.</p></li>
+<li><p><strong>update_data</strong> – The data to update for the rental.</p></li>
+<li><p><strong>rental_service</strong> – An instance of the RentalService class for managing rental data.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.close_rental">
+<span class="sig-name descname"><span class="pre">close_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.close_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.close_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Close the rental.</p>
+<p>This method uses the rental service to close the rental.
+If the close data is invalid, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the rental close data is invalid and HTTP status code 400.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_rental_data">
+<span class="sig-name descname"><span class="pre">create_response_with_rental_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.create_response_with_rental_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_rental_data" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response containing all data about the rental.</p>
+<p>This method uses the rental service to retrieve all data about the rental and prepares a response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing all data about the rental and HTTP status code of 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, any], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_successful_close_message">
+<span class="sig-name descname"><span class="pre">create_response_with_successful_close_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.create_response_with_successful_close_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_successful_close_message" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response with a successful close message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing a success message and HTTP status code of 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_successful_delete_message">
+<span class="sig-name descname"><span class="pre">create_response_with_successful_delete_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.create_response_with_successful_delete_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_successful_delete_message" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response with a successful delete message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing a success message and HTTP status code of 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_successful_update_message">
+<span class="sig-name descname"><span class="pre">create_response_with_successful_update_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.create_response_with_successful_update_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.create_response_with_successful_update_message" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response with a successful update message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing a success message and HTTP status code of 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.delete_rental">
+<span class="sig-name descname"><span class="pre">delete_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.delete_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.delete_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the rental.</p>
+<p>This method uses the rental service to delete the rental based on their ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.update_rental">
+<span class="sig-name descname"><span class="pre">update_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.update_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.update_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Update the rental’s data.</p>
+<p>This method uses the rental service to update the rental’s data.
+If the update data is invalid, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the rental update data is invalid and HTTP status code 400.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rental_controller.RentalController.validate_rental">
+<span class="sig-name descname"><span class="pre">validate_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rental_controller.html#RentalController.validate_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rental_controller.RentalController.validate_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the rental’s existence.</p>
+<p>This method uses the rental service to validate the existence of the rental based on their ID.
+If the rental does not exist, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the rental does not exist and HTTP status code 404.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.controllers.rentals.rentals_controller">
+<span id="backend-src-app-controllers-rentals-rentals-controller-module"></span><h2>backend.src.app.controllers.rentals.rentals_controller module<a class="headerlink" href="#module-backend.src.app.controllers.rentals.rentals_controller" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rentals_controller.RentalsController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.controllers.rentals.rentals_controller.</span></span><span class="sig-name descname"><span class="pre">RentalsController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rental_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rentals_controller.html#RentalsController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rentals_controller.RentalsController" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The RentalsController class provides methods for handling rental-related requests.</p>
+<p>This class acts as a controller that uses the RentalsService for creating a new rental
+and preparing data related to all rentals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rental_data</strong> – The data for creating a new rental.</p></li>
+<li><p><strong>rentals_service</strong> – An instance of the RentalsService class for managing rentals’ data.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rentals_controller.RentalsController.create_client">
+<span class="sig-name descname"><span class="pre">create_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rentals_controller.html#RentalsController.create_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rentals_controller.RentalsController.create_client" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new rental.</p>
+<p>This method uses the rentals service to create a new rental with the provided data.
+If the rental data is invalid, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the rental data is invalid with HTTP code 400.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rentals_controller.RentalsController.create_response_with_rentals_data">
+<span class="sig-name descname"><span class="pre">create_response_with_rentals_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rentals_controller.html#RentalsController.create_response_with_rentals_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rentals_controller.RentalsController.create_response_with_rentals_data" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare a response containing data about all rentals.</p>
+<p>This method uses the rentals service to retrieve data about all rentals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple where the first item is a list of data about all rentals and
+the second item is the HTTP status code 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[list[dict[str, any]], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rentals_controller.RentalsController.create_response_with_successful_create_message">
+<span class="sig-name descname"><span class="pre">create_response_with_successful_create_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rentals_controller.html#RentalsController.create_response_with_successful_create_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rentals_controller.RentalsController.create_response_with_successful_create_message" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare a response containing a success message for rental creation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple where the first item is a dictionary containing a success message and
+the second item is the HTTP status code 200.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.controllers.rentals.rentals_sort_controller">
+<span id="backend-src-app-controllers-rentals-rentals-sort-controller-module"></span><h2>backend.src.app.controllers.rentals.rentals_sort_controller module<a class="headerlink" href="#module-backend.src.app.controllers.rentals.rentals_sort_controller" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rentals_sort_controller.RentalsSortController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.controllers.rentals.rentals_sort_controller.</span></span><span class="sig-name descname"><span class="pre">RentalsSortController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rentals_sort_controller.html#RentalsSortController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rentals_sort_controller.RentalsSortController" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The RentalsSortController class provides methods for sorting rentals and creating an appropriate response.</p>
+<p>This class acts as a controller for handling requests related to sorting rentals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort_data</strong> – The data specifying how rentals should be sorted.</p></li>
+<li><p><strong>sorted_rentals</strong> – The sorted rental data.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rentals_sort_controller.RentalsSortController.create_response_with_sorted_rentals_data">
+<span class="sig-name descname"><span class="pre">create_response_with_sorted_rentals_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rentals_sort_controller.html#RentalsSortController.create_response_with_sorted_rentals_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rentals_sort_controller.RentalsSortController.create_response_with_sorted_rentals_data" title="Permalink to this definition"></a></dt>
+<dd><p>Create a response containing the sorted rental data.</p>
+<p>This method prepares a response with the sorted rental data.
+The response includes a 200 status code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The response containing the sorted rental data and a 200 status code.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[list[dict[str, any]], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.controllers.rentals.rentals_sort_controller.RentalsSortController.sort_rentals">
+<span class="sig-name descname"><span class="pre">sort_rentals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/controllers/rentals/rentals_sort_controller.html#RentalsSortController.sort_rentals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.controllers.rentals.rentals_sort_controller.RentalsSortController.sort_rentals" title="Permalink to this definition"></a></dt>
+<dd><p>Sort rental data based on the provided parameters.</p>
+<p>This method uses the RentalsSortService to sort all rentals based on the sorting data.
+If the sorting fails, it raises a ControllerException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="backend.src.app.controllers.exceptions.html#backend.src.app.controllers.exceptions.controller_exception.ControllerException" title="backend.src.app.controllers.exceptions.controller_exception.ControllerException"><strong>ControllerException</strong></a> – If the sorting fails due to invalid sort QUERY parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.controllers.rentals">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.controllers.rentals" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.controllers.exceptions.html" class="btn btn-neutral float-left" title="backend.src.app.controllers.exceptions package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.app.models.html" class="btn btn-neutral float-right" title="backend.src.app.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

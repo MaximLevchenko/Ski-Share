@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.repositories.employees package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.app.repositories.equipments package" href="backend.src.app.repositories.equipments.html" />
+    <link rel="prev" title="backend.src.app.repositories.clients package" href="backend.src.app.repositories.clients.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.repositories.html">backend.src.app.repositories package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.repositories.employees package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.repositories.employees.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-repositories-employees-package">
+<h1>backend.src.app.repositories.employees package<a class="headerlink" href="#backend-src-app-repositories-employees-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-backend.src.app.repositories.employees.employee_repository">
+<span id="backend-src-app-repositories-employees-employee-repository-module"></span><h2>backend.src.app.repositories.employees.employee_repository module<a class="headerlink" href="#module-backend.src.app.repositories.employees.employee_repository" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.repositories.employees.employee_repository.</span></span><span class="sig-name descname"><span class="pre">EmployeeRepository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">employee_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">employee_email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The EmployeeRepository class encapsulates the logic necessary to access the database and
+perform CRUD operations on the Employee model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>employee_id</strong> – Unique identifier for an employee. Used for retrieving an existing employee by ID.</p></li>
+<li><p><strong>employee_email</strong> – Unique email for an employee. Used for retrieving an existing employee by email.</p></li>
+<li><p><strong>employee</strong> – Instance of the Employee model representing an employee in the database.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository.delete" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the current employee instance from the database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee">
+<span class="sig-name descname"><span class="pre">get_employee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository.get_employee"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the current employee instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns the current employee instance or None if it doesn’t exist.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="backend.src.app.models.html#backend.src.app.models.employee_model.Employee" title="backend.src.app.models.employee_model.Employee">Employee</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee_all_data">
+<span class="sig-name descname"><span class="pre">get_employee_all_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository.get_employee_all_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee_all_data" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve all data of the current employee instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns a dictionary containing all data of the current employee instance. Contains following keys:
+- id (int): The employee’s ID.
+- name (str): The employee’s name.
+- surname (str): The employee’s surname.
+- email (str): The employee’s email.
+- phone (str): The employee’s phone.
+- salary (int): The employee’s salary.
+- position (str): The employee’s position.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee_hash_password">
+<span class="sig-name descname"><span class="pre">get_employee_hash_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository.get_employee_hash_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee_hash_password" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the current employee hash password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns the current employee hash password or None if it doesn’t exist.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee_profile_data">
+<span class="sig-name descname"><span class="pre">get_employee_profile_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository.get_employee_profile_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository.get_employee_profile_data" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve profile data of the current employee instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns a dictionary containing profile data of the current employee instance. Contains following keys:
+- id (int): The employee’s ID.
+- name (str): The employee’s name.
+- surname (str): The employee’s surname.
+- email (str): The employee’s email.
+- phone (str): The employee’s phone.
+- salary (int): The employee’s salary.
+- position (str): The employee’s position.
+- latest_rentals (list[int]): The employee’s latest conducted rental IDs.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository.save" title="Permalink to this definition"></a></dt>
+<dd><p>Save the current employee instance to the database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employee_repository.EmployeeRepository.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employee_repository.html#EmployeeRepository.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employee_repository.EmployeeRepository.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update the current employee instance based on the provided update data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>update_data</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>any</em><em>]</em>) – Dictionary containing new values for the employee’s attributes.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns True if the update was successful, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.repositories.employees.employees_repository">
+<span id="backend-src-app-repositories-employees-employees-repository-module"></span><h2>backend.src.app.repositories.employees.employees_repository module<a class="headerlink" href="#module-backend.src.app.repositories.employees.employees_repository" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employees_repository.EmployeesRepository">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.repositories.employees.employees_repository.</span></span><span class="sig-name descname"><span class="pre">EmployeesRepository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">create_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employees_repository.html#EmployeesRepository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employees_repository.EmployeesRepository" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The EmployeesRepository class provides methods for creating, retrieving, and sorting Employee objects.</p>
+<p>This class acts as a repository and uses the Employee model to perform operations related to employees.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employees_repository.EmployeesRepository.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employees_repository.html#EmployeesRepository.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employees_repository.EmployeesRepository.create" title="Permalink to this definition"></a></dt>
+<dd><p>Creates an Employee instance.</p>
+<p>This method takes the employee data provided during the initialization of the repository,
+validates it, and if valid, creates an Employee instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the employee was created, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employees_repository.EmployeesRepository.get_all">
+<span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employees_repository.html#EmployeesRepository.get_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employees_repository.EmployeesRepository.get_all" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves all Employee instances.</p>
+<p>This method fetches all the Employee instances from the database and stores the result in self.employees_data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of all Employee instances.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="backend.src.app.models.html#backend.src.app.models.employee_model.Employee" title="backend.src.app.models.employee_model.Employee">Employee</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.repositories.employees.employees_repository.EmployeesRepository.sort_all">
+<span class="sig-name descname"><span class="pre">sort_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/repositories/employees/employees_repository.html#EmployeesRepository.sort_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.repositories.employees.employees_repository.EmployeesRepository.sort_all" title="Permalink to this definition"></a></dt>
+<dd><p>Sorts all Employee instances based on the provided sorting parameters and stores the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort_data</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>any</em><em>]</em>) – Dictionary containing the sorting parameters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A sorted list of all Employee instances if the sorting parameters are valid, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<a class="reference internal" href="backend.src.app.models.html#backend.src.app.models.employee_model.Employee" title="backend.src.app.models.employee_model.Employee">Employee</a>] or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.repositories.employees">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.repositories.employees" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.repositories.clients.html" class="btn btn-neutral float-left" title="backend.src.app.repositories.clients package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.app.repositories.equipments.html" class="btn btn-neutral float-right" title="backend.src.app.repositories.equipments package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.services.rentals package &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="backend.src.configurations package" href="backend.src.configurations.html" />
+    <link rel="prev" title="backend.src.app.services.equipments package" href="backend.src.app.services.equipments.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ski-share</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="backend.html">backend package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="backend.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="backend.src.html">backend.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-run-module">backend.run module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#backend-test-api-module">backend.test_api module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend.html#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ski-share</a></li>
+          <li class="breadcrumb-item"><a href="backend.html">backend package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.html">backend.src package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.html">backend.src.app package</a></li>
+          <li class="breadcrumb-item"><a href="backend.src.app.services.html">backend.src.app.services package</a></li>
+      <li class="breadcrumb-item active">backend.src.app.services.rentals package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backend.src.app.services.rentals.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="backend-src-app-services-rentals-package">
+<h1>backend.src.app.services.rentals package<a class="headerlink" href="#backend-src-app-services-rentals-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-backend.src.app.services.rentals.rental_service">
+<span id="backend-src-app-services-rentals-rental-service-module"></span><h2>backend.src.app.services.rentals.rental_service module<a class="headerlink" href="#module-backend.src.app.services.rentals.rental_service" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rental_service.RentalService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.services.rentals.rental_service.</span></span><span class="sig-name descname"><span class="pre">RentalService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rental_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rental_service.html#RentalService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rental_service.RentalService" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The RentalService class provides methods for managing rental data.</p>
+<p>This class acts as a service for validating, updating, deleting, and preparing data related to a rental.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rental_id</strong> – The ID of the rental.</p></li>
+<li><p><strong>update_data</strong> – The data to update for the rental.</p></li>
+<li><p><strong>rental_repository</strong> – An instance of the RentalRepository class for interacting with rental data.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rental_service.RentalService.close_rental">
+<span class="sig-name descname"><span class="pre">close_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rental_service.html#RentalService.close_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rental_service.RentalService.close_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Close the rental.</p>
+<p>This method uses the rental repository to close the rental and the equipment repository
+to unrent the related equipment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the rental was successfully closed, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rental_service.RentalService.delete_rental">
+<span class="sig-name descname"><span class="pre">delete_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rental_service.html#RentalService.delete_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rental_service.RentalService.delete_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the rental.</p>
+<p>This method uses the rental repository to delete the rental based on their ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rental_service.RentalService.prepare_response_with_rental_data">
+<span class="sig-name descname"><span class="pre">prepare_response_with_rental_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rental_service.html#RentalService.prepare_response_with_rental_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rental_service.RentalService.prepare_response_with_rental_data" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare a response containing all data about the rental.</p>
+<p>This method uses the rental repository to retrieve all data about the rental.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing all data about the rental.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict[str, any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rental_service.RentalService.update_rental_data">
+<span class="sig-name descname"><span class="pre">update_rental_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rental_service.html#RentalService.update_rental_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rental_service.RentalService.update_rental_data" title="Permalink to this definition"></a></dt>
+<dd><p>Update the rental’s data.</p>
+<p>This method uses the rental repository to update the rental’s data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The bool if the rental was successfully updated.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rental_service.RentalService.validate_rental">
+<span class="sig-name descname"><span class="pre">validate_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rental_service.html#RentalService.validate_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rental_service.RentalService.validate_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Validate the rental’s existence.</p>
+<p>This method uses the rental repository to validate the existence of the rental based on their ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the rental exists, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.services.rentals.rentals_service">
+<span id="backend-src-app-services-rentals-rentals-service-module"></span><h2>backend.src.app.services.rentals.rentals_service module<a class="headerlink" href="#module-backend.src.app.services.rentals.rentals_service" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rentals_service.RentalsService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.services.rentals.rentals_service.</span></span><span class="sig-name descname"><span class="pre">RentalsService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">create_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rentals_service.html#RentalsService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rentals_service.RentalsService" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The RentalsService class provides methods for managing multiple rentals’ data.</p>
+<p>This class acts as a service for creating new rentals and preparing data related to all rentals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>create_data</strong> – The data for creating a new rental.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rentals_service.RentalsService.create_rental">
+<span class="sig-name descname"><span class="pre">create_rental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rentals_service.html#RentalsService.create_rental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rentals_service.RentalsService.create_rental" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new rental.</p>
+<p>This method uses the rentals repository to create a new rental with the provided data. If the rental is
+successfully created, it also rents all the equipment specified in the creation data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the rental and all associated equipment rentals were successfully created, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rentals_service.RentalsService.prepare_response_with_rentals_data">
+<span class="sig-name descname"><span class="pre">prepare_response_with_rentals_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rentals_service.html#RentalsService.prepare_response_with_rentals_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rentals_service.RentalsService.prepare_response_with_rentals_data" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare a response containing data about all rentals.</p>
+<p>This method uses the rentals repository to retrieve data about all rentals. For each rental, it also retrieves
+additional data about the associated client and employee, and includes this data in the response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of data about all rentals, with each rental’s data including additional data about the
+associated client and employee.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[dict[str, any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.services.rentals.rentals_sort_service">
+<span id="backend-src-app-services-rentals-rentals-sort-service-module"></span><h2>backend.src.app.services.rentals.rentals_sort_service module<a class="headerlink" href="#module-backend.src.app.services.rentals.rentals_sort_service" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rentals_sort_service.RentalsSortService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.src.app.services.rentals.rentals_sort_service.</span></span><span class="sig-name descname"><span class="pre">RentalsSortService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rentals_sort_service.html#RentalsSortService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rentals_sort_service.RentalsSortService" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The RentalsSortService class provides a method to sort rental data.</p>
+<p>This class acts as a service for sorting data related to rentals. It uses RentalsRepository to retrieve and sort
+rentals and other repositories to retrieve related data for each rental.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="backend.src.app.services.rentals.rentals_sort_service.RentalsSortService.sort_rentals">
+<span class="sig-name descname"><span class="pre">sort_rentals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/src/app/services/rentals/rentals_sort_service.html#RentalsSortService.sort_rentals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.src.app.services.rentals.rentals_sort_service.RentalsSortService.sort_rentals" title="Permalink to this definition"></a></dt>
+<dd><p>Sort rental data based on the provided parameters.</p>
+<p>This method uses the RentalsRepository to sort all rentals based on the sorting data. Then, it enriches the
+rental data with additional information about the client and employee associated with each rental.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sorted and enriched rental data or False if the sort data wasn’t valid. Each item in the list
+includes data about the rental, the client and the employee.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[dict[str, any]] or False</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-backend.src.app.services.rentals">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend.src.app.services.rentals" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backend.src.app.services.equipments.html" class="btn btn-neutral float-left" title="backend.src.app.services.equipments package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backend.src.configurations.html" class="btn btn-neutral float-right" title="backend.src.configurations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

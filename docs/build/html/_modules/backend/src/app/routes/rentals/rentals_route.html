@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backend.src.app.routes.rentals.rentals_route &mdash; Ski-Share 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../../index.html" class="icon icon-home">
+            Ski-Share
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../modules.html">ski-share</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Ski-Share</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">backend.src.app.routes.rentals.rentals_route</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for backend.src.app.routes.rentals.rentals_route</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask_jwt_extended</span> <span class="kn">import</span> <span class="n">jwt_required</span>
+<span class="kn">from</span> <span class="nn">flask_restx</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Namespace</span>
+
+<span class="kn">from</span> <span class="nn">.rentals_serialization_models</span> <span class="kn">import</span> <span class="n">create_rental_post_model</span><span class="p">,</span> <span class="n">create_rental_get_model</span><span class="p">,</span> <span class="n">create_rental_full_model</span><span class="p">,</span> \
+    <span class="n">create_rental_fees_model</span><span class="p">,</span> <span class="n">create_rental_description_model</span>
+<span class="kn">from</span> <span class="nn">...controllers</span> <span class="kn">import</span> <span class="n">ControllerException</span><span class="p">,</span> <span class="n">RentalsController</span><span class="p">,</span> <span class="n">RentalsSortController</span><span class="p">,</span> <span class="n">RentalController</span>
+
+
+<span class="n">rentals_namespace</span> <span class="o">=</span> <span class="n">Namespace</span><span class="p">(</span><span class="s2">&quot;rentals&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Rentals related operations.&quot;</span><span class="p">)</span>
+
+<span class="n">rental_post_model</span> <span class="o">=</span> <span class="n">create_rental_post_model</span><span class="p">(</span><span class="n">rentals_namespace</span><span class="p">)</span>
+<span class="n">rental_get_model</span> <span class="o">=</span> <span class="n">create_rental_get_model</span><span class="p">(</span><span class="n">rentals_namespace</span><span class="p">)</span>
+<span class="n">rental_full_model</span> <span class="o">=</span> <span class="n">create_rental_full_model</span><span class="p">(</span><span class="n">rentals_namespace</span><span class="p">)</span>
+<span class="n">rental_fees_model</span> <span class="o">=</span> <span class="n">create_rental_fees_model</span><span class="p">(</span><span class="n">rentals_namespace</span><span class="p">)</span>
+<span class="n">rental_description_model</span> <span class="o">=</span> <span class="n">create_rental_description_model</span><span class="p">(</span><span class="n">rentals_namespace</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="RentalsRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsRouter">[docs]</a><span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">RentalsRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to rental.</span>
+
+<span class="sd">    Provides handlers for HTTP GET and POST requests made to the &#39;/rentals/&#39; endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RentalsRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsRouter.get">[docs]</a>    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">marshal_list_with</span><span class="p">(</span><span class="n">rental_get_model</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves all rental data.</span>
+
+<span class="sd">        This method requires a JWT token. It creates a `RentalsController` instance and then generates a response</span>
+<span class="sd">        containing data about all rentals.</span>
+
+<span class="sd">        :return: A response object containing a list of all rental data.</span>
+<span class="sd">        :rtype: tuple[list[dict[str, any]], int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rentals_controller</span> <span class="o">=</span> <span class="n">RentalsController</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">rentals_controller</span><span class="o">.</span><span class="n">create_response_with_rentals_data</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="RentalsRouter.post"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsRouter.post">[docs]</a>    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">rental_post_model</span><span class="p">)</span>
+    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Invalid rental data.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a new rental.</span>
+
+<span class="sd">        This method requires a JWT token and the rental data in the request body. It creates a `RentalsController`</span>
+<span class="sd">        instance with the request data and attempts to create a new rental.</span>
+
+<span class="sd">        :return: A response object containing a success message or an error message if an error occurs.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If an error occurs while creating the rental.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rentals_controller</span> <span class="o">=</span> <span class="n">RentalsController</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rentals_controller</span><span class="o">.</span><span class="n">create_client</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">rentals_controller</span><span class="o">.</span><span class="n">create_response_with_successful_create_message</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="RentalsSortRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsSortRouter">[docs]</a><span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/sort&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">RentalsSortRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling the operation related to sorting rental data.</span>
+
+<span class="sd">    Provides a handler for HTTP GET requests made to the &#39;/rentals/sort&#39; endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RentalsSortRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalsSortRouter.get">[docs]</a>    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Invalid sort QUERY parameters.&quot;</span><span class="p">)</span>
+    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">marshal_list_with</span><span class="p">(</span><span class="n">rental_get_model</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves sorted rental data.</span>
+
+<span class="sd">        This method requires a JWT token and the sort parameters in the query string. It creates a</span>
+<span class="sd">        `RentalsSortController` instance with the request arguments and attempts to sort the rental data.</span>
+
+<span class="sd">        :return: A response object containing a list of sorted rental data.</span>
+<span class="sd">        :rtype: tuple[list[dict[str, any]], int]</span>
+
+<span class="sd">        :raises ControllerException: If an error occurs while sorting the rental data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rentals_sort_controller</span> <span class="o">=</span> <span class="n">RentalsSortController</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rentals_sort_controller</span><span class="o">.</span><span class="n">sort_rentals</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">rentals_sort_controller</span><span class="o">.</span><span class="n">create_response_with_sorted_rentals_data</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="RentalRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalRouter">[docs]</a><span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/rental/&lt;int:id&gt;&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">RentalRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to a specific rental record.</span>
+
+<span class="sd">    Provides handlers for HTTP GET and DELETE requests made to the &#39;/rentals/rental/&lt;id&gt;&#39; endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RentalRouter.get"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalRouter.get">[docs]</a>    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Rental not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">marshal_with</span><span class="p">(</span><span class="n">rental_full_model</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves a specific rental record by ID.</span>
+
+<span class="sd">        This method requires a JWT token and the ID of the rental. It creates a `RentalController` instance</span>
+<span class="sd">        with the provided ID and attempts to validate the rental.</span>
+
+<span class="sd">        :param id: The ID of the rental.</span>
+<span class="sd">        :type id: int</span>
+
+<span class="sd">        :return: A response object containing the rental data.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If the rental does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rental_controller</span> <span class="o">=</span> <span class="n">RentalController</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rental_controller</span><span class="o">.</span><span class="n">validate_rental</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">rental_controller</span><span class="o">.</span><span class="n">create_response_with_rental_data</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="RentalRouter.delete"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalRouter.delete">[docs]</a>    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Rental not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Deletes a specific rental record by ID.</span>
+
+<span class="sd">        This method requires a JWT token and the ID of the rental. It creates a `RentalController` instance</span>
+<span class="sd">        with the provided ID and attempts to validate and delete the rental.</span>
+
+<span class="sd">        :param id: The ID of the rental.</span>
+<span class="sd">        :type id: int</span>
+
+<span class="sd">        :return: A response object containing a successful deletion message.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If the rental does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rental_controller</span> <span class="o">=</span> <span class="n">RentalController</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rental_controller</span><span class="o">.</span><span class="n">validate_rental</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="n">rental_controller</span><span class="o">.</span><span class="n">delete_rental</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">rental_controller</span><span class="o">.</span><span class="n">create_response_with_successful_delete_message</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="RentalDescriptionRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalDescriptionRouter">[docs]</a><span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/rental/&lt;int:id&gt;/description&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">RentalDescriptionRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to a specific rental record&#39;s description.</span>
+
+<span class="sd">    Provides a handler for HTTP PUT requests made to the &#39;/rentals/rental/&lt;id&gt;/description&#39; endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RentalDescriptionRouter.put"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalDescriptionRouter.put">[docs]</a>    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">rental_description_model</span><span class="p">)</span>
+    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Invalid rental update data.&quot;</span><span class="p">)</span>
+    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Rental not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Updates a specific rental record&#39;s description by ID.</span>
+
+<span class="sd">        This method requires a JWT token and the ID of the rental. It creates a `RentalController` instance</span>
+<span class="sd">        with the provided ID and attempts to validate the rental and update the description.</span>
+
+<span class="sd">        :param id: The ID of the rental.</span>
+<span class="sd">        :type id: int</span>
+
+<span class="sd">        :return: A response object containing a successful update message.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If the rental does not exist or if the provided description data is invalid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rental_controller</span> <span class="o">=</span> <span class="n">RentalController</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rental_controller</span><span class="o">.</span><span class="n">validate_rental</span><span class="p">()</span>
+            <span class="n">rental_controller</span><span class="o">.</span><span class="n">update_rental</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">rental_controller</span><span class="o">.</span><span class="n">create_response_with_successful_update_message</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="RentalCloseRouter"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalCloseRouter">[docs]</a><span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/rental/&lt;int:id&gt;/close&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">RentalCloseRouter</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Router for handling operations related to closing a specific rental record.</span>
+
+<span class="sd">    Provides a handler for HTTP PUT requests made to the &#39;/rentals/rental/&lt;id&gt;/close&#39; endpoint.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RentalCloseRouter.put"><a class="viewcode-back" href="../../../../../../backend.src.app.routes.rentals.html#backend.src.app.routes.rentals.rentals_route.RentalCloseRouter.put">[docs]</a>    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">rental_fees_model</span><span class="p">)</span>
+    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;Invalid fees.&quot;</span><span class="p">)</span>
+    <span class="nd">@rentals_namespace</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Rental not found.&quot;</span><span class="p">)</span>
+    <span class="nd">@jwt_required</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Closes a specific rental record by ID.</span>
+
+<span class="sd">        This method requires a JWT token and the ID of the rental. It creates a `RentalController` instance</span>
+<span class="sd">        with the provided ID and attempts to validate the rental and close it.</span>
+
+<span class="sd">        :param id: The ID of the rental.</span>
+<span class="sd">        :type id: int</span>
+
+<span class="sd">        :return: A response object containing a successful closure message.</span>
+<span class="sd">        :rtype: tuple[dict[str, str], int]</span>
+
+<span class="sd">        :raises ControllerException: If the rental does not exist or if the provided fees data is invalid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rental_controller</span> <span class="o">=</span> <span class="n">RentalController</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rental_controller</span><span class="o">.</span><span class="n">validate_rental</span><span class="p">()</span>
+            <span class="n">rental_controller</span><span class="o">.</span><span class="n">close_rental</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="n">ControllerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">},</span> <span class="n">e</span><span class="o">.</span><span class="n">http_code</span>
+
+        <span class="k">return</span> <span class="n">rental_controller</span><span class="o">.</span><span class="n">create_response_with_successful_close_message</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Levchmak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

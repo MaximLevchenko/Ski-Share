@@ -1,0 +1,3 @@
+from .rentals_controller import RentalsController
+from .rentals_sort_controller import RentalsSortController
+from .rental_controller import RentalController

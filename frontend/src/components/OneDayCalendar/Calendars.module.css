@@ -1,0 +1,167 @@
+* {
+    font-family: 'Montserrat';
+}
+
+.container{
+    width: 100%;
+    position: relative;
+    height: 70px;
+}
+
+.input{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 16px 35px 13px;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    background: transparent;
+    border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #F5F5F5;
+}
+
+.calendar, .calendarHide{
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 350px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #B19DFF;
+    overflow: hidden;
+    border-radius: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: show;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    z-index: 5;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.calendarHide{
+    animation-name: hide;
+    animation-delay: 0.2s;
+}
+
+.head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    background: #B19DFF;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    color: white;
+}
+
+.arrowContainer{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrowPrev{
+    min-width: 15px;
+    min-height: 15px;
+    border: 3px solid white;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+}
+
+.arrowNext{
+    min-width: 15px;
+    min-height: 15px;
+    border: 3px solid white;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.month{
+    margin-bottom: 3px;
+}
+
+.table{
+    width: 320px;
+    padding: 10px 20px 5px;
+    box-sizing: border-box;
+    background: #B19DFF;
+    border-radius: 0 0 20px 20px;
+    table-layout: fixed;
+}
+
+.table > thead > tr > th{
+    font-weight: 400;
+    font-size: 14px;
+    width: 30px;
+    max-width: 40px;
+    height: 30px;
+    color: white;
+}
+
+.table > tbody > tr > td{
+    height: 40px;
+    width: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.noDay{
+    background: transparent;
+}
+
+.day{
+    cursor: pointer;
+    background: #9988FF;
+    color: white;
+}
+
+.daySelected{
+    background: #D774E7;
+    color: white;
+    cursor: pointer;
+}
+
+.dayBetween{
+    background: rgb(226, 226, 226);
+    color: black;
+}
