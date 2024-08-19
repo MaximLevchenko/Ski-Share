@@ -1,0 +1,113 @@
+  stages:
+    - build_docker_image
+    - container_registry_push
+    - sonarqube
+    - docs
+    - test
+
+  backend:
+    image: docker:20-dind
+    rules:
+      - if: $CI_PIPELINE_SOURCE != "schedule"
+    variables:
+      # using "docker" as the host is only possible if you alias the service below
+      DOCKER_HOST: tcp://docker:2375
+      # could be wrong here but although Docker defaults to overlay2,
+      # Docker-in-Docker (DIND) does not according to the following GitLab doc:
+      # https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-the-overlayfs-driver
+      DOCKER_DRIVER: overlay2
+      DOCKER_TLS_CERTDIR: ""
+    services:
+      - name: docker:20-dind
+        alias: docker
+        # in our experience although you'd assume this would be sufficient, this did
+        # nothing to prevent connection errors without `DOCKER_TLS_CERTDIR` being set
+        # to an empty string, and I would call that beyond mildly infuriating.
+        command: ["--tls=false"]
+    before_script:
+      - cd backend
+      - echo ${DOCKER_HUB_PASSWORD} | docker login -u ${DOCKER_HUB_USER} --password-stdin
+    stage: build_docker_image
+    script:
+      - docker build -t levchmak/ski-share .
+      - docker tag levchmak/ski-share $CI_REGISTRY_IMAGE
+      - docker images
+      - docker save -o image.tar levchmak/ski-share
+      - docker push levchmak/ski-share:latest
+      - ls -la
+    artifacts:
+      paths:
+        - backend/image.tar
+
+  sonarqube:                                                                # free name
+    image: sonarsource/sonar-scanner-cli:${SONAR_SCANNER_CLI_VERSION}
+    stage: sonarqube                                                            # free name
+    variables:
+      SONAR_PROJECT_BASE_DIR: "$CI_PROJECT_DIR"
+    script:
+      - /usr/bin/entrypoint.sh sonar-scanner -Dsonar.projectKey="$CI_PROJECT_NAME" -Dsonar.report.export.path=backend/report.json   # sonar.projectKey defines the name of the project in SonarQube.
+      - ls -la
+      - cd backend
+      - ls -la
+    artifacts:
+      paths:
+        - backend/report.json
+
+  container_registry_push:
+    image: docker:20-dind
+    needs:
+      - job: backend
+    rules:
+      - if: $CI_PIPELINE_SOURCE != "schedule"
+    variables:
+      # using "docker" as the host is only possible if you alias the service below
+      DOCKER_HOST: tcp://docker:2375
+      # could be wrong here but although Docker defaults to overlay2,
+      # Docker-in-Docker (DIND) does not according to the following GitLab doc:
+      # https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-the-overlayfs-driver
+      DOCKER_DRIVER: overlay2
+      DOCKER_TLS_CERTDIR: ""
+    services:
+      - name: docker:20-dind
+        alias: docker
+        # in our experience although you'd assume this would be sufficient, this did
+        # nothing to prevent connection errors without `DOCKER_TLS_CERTDIR` being set
+        # to an empty string, and I would call that beyond mildly infuriating.
+        command: ["--tls=false"]
+    stage: container_registry_push
+    before_script:
+      - cd backend
+      - echo ${CI_REGISTRY_PASSWORD} | docker login ${CI_REGISTRY} -u ${CI_REGISTRY_USER} --password-stdin
+
+    script:
+      - docker pull levchmak/ski-share:latest
+      - docker images
+      - docker info
+      - docker tag levchmak/ski-share $CI_REGISTRY_IMAGE
+      - docker images
+      - docker push $CI_REGISTRY_IMAGE
+
+  tests:
+    image: $CI_REGISTRY_IMAGE
+    stage: test
+    needs:
+      - job: backend
+        artifacts: true
+    script:
+      - python3 backend/tests/test_auth_api.py
+      - python3 backend/tests/test_employees_api.py
+      - python3 backend/tests/test_clients_api.py
+      - python3 backend/tests/test_equipments_api.py
+      - python3 backend/tests/test_rentals_api.py
+
+  pages:
+    image: $CI_REGISTRY_IMAGE
+    stage: docs
+    script:
+      - sphinx-build -b html docs docs/build/html/
+      - mv docs/build/html/ public/
+    artifacts:
+      paths:
+        - public
+    only:
+      - master
