@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
@@ -33,13 +33,18 @@ def create_app(config):
     app.config.from_object(config)
 
     # Enable CORS for the app.
-    CORS(app, supports_credentials=True)
+    CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
+    # CORS(app, supports_credentials=True, origins=['http://localhost:3000'])
     # Initialize SQLAlchemy with app.
     db.init_app(app)
     # Initialize Flask-Migrate for handling migrations.
     Migrate(app, db)
     # Setup the Flask-JWT-Extended extension.
     jwt_manager = JWTManager(app)
+    # List all the headers  client might send, including custom ones
+    allowed_headers = ['Content-Type', 'Authorization', 'Access-Control-Allow-Origin']
+
+
 
     @jwt_manager.token_in_blocklist_loader
     def check_if_token_in_blacklist(jwt_header, jwt_payload):
@@ -57,14 +62,29 @@ def create_app(config):
 
         return token is not None
 
+        # Ensure OPTIONS requests are handled correctly (preflight)
+    @app.before_request
+    def handle_options_request():
+        if request.method == 'OPTIONS':
+            return jsonify({'status': 'ok'}), 200
+
+    @app.after_request
+    def apply_cors(response):
+        response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+        response.headers['Access-Control-Allow-Credentials'] = 'true'
+        response.headers['Access-Control-Allow-Headers'] = ', '.join(allowed_headers)
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS, PUT, DELETE'
+        return response
+
     # Initialize Flask-Restx Api.
     api = Api(app, doc='/docs')
     # Add namespaces.
-    api.add_namespace(auth_namespace)
-    api.add_namespace(clients_namespace)
-    api.add_namespace(employees_namespace)
-    api.add_namespace(equipments_namespace)
-    api.add_namespace(rentals_namespace)
+    # Add namespaces to the API
+    api.add_namespace(equipments_namespace, path='/equipments')
+    api.add_namespace(auth_namespace, path='/auth')
+    api.add_namespace(clients_namespace, path='/clients')
+    api.add_namespace(employees_namespace, path='/employees')
+    api.add_namespace(rentals_namespace, path='/rentals')
 
     @app.shell_context_processor
     def make_shell_context():

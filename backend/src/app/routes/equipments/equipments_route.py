@@ -1,4 +1,5 @@
 from flask import request
+from flask_cors import cross_origin
 from flask_jwt_extended import jwt_required
 from flask_restx import Resource, Namespace
 
@@ -22,6 +23,7 @@ class EquipmentsRouter(Resource):
     Provides handlers for HTTP GET and POST requests made to the '/equipments' endpoint.
     """
 
+    @cross_origin()
     @equipments_namespace.marshal_list_with(equipment_get_model)
     @jwt_required()
     def get(self):
@@ -37,6 +39,7 @@ class EquipmentsRouter(Resource):
 
         return equipments_controller.create_response_with_equipments_data()
 
+    @cross_origin()
     @equipments_namespace.expect(equipment_post_model)
     @equipments_namespace.response(400, "Invalid equipment data.")
     @jwt_required()
@@ -72,6 +75,7 @@ class EquipmentsSortRouter(Resource):
     Provides a handler for HTTP GET requests made to the '/equipments/sort' endpoint.
     """
 
+    @cross_origin()
     @equipments_namespace.response(400, "Invalid sort QUERY parameters.")
     @equipments_namespace.marshal_list_with(equipment_get_model)
     @jwt_required()
@@ -108,6 +112,7 @@ class EquipmentRouter(Resource):
     endpoint, where `{inventory_number}` is the inventory number of the specific equipment.
     """
 
+    @cross_origin()
     @equipments_namespace.response(404, "Equipment not found.")
     @equipments_namespace.marshal_with(equipment_get_model)
     @jwt_required()
@@ -136,6 +141,7 @@ class EquipmentRouter(Resource):
 
         return equipment_controller.create_response_with_equipment_data()
 
+    @cross_origin()
     @equipments_namespace.expect(equipment_update_model)
     @equipments_namespace.response(400, "Invalid equipment update data.")
     @equipments_namespace.response(404, "Equipment not found.")
@@ -166,6 +172,7 @@ class EquipmentRouter(Resource):
 
         return equipment_controller.create_response_with_successful_update_message()
 
+    @cross_origin()
     @equipments_namespace.response(201, "Equipment deleted successfully.")
     @equipments_namespace.response(404, "Equipment not found.")
     @jwt_required()
@@ -206,6 +213,7 @@ class EquipmentDamagedRouter(Resource):
     endpoint, where `{inventory_number}` is the inventory number of the specific piece of equipment.
     """
 
+    @cross_origin()
     @equipments_namespace.response(201, "Equipment updated successfully.")
     @equipments_namespace.response(404, "Equipment not found.")
     @jwt_required()

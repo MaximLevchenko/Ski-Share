@@ -1,11 +1,12 @@
 import { apiSlice } from '../api/apiSlice'
 
-
 const rentalApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createNewRental: builder.mutation({
       invalidatesTags: (result, error, rental) => {
-        return [{ type: 'Rental', id: rental.id }];
+        return result
+          ? [{ type: 'Rental', id: result.id }]
+          : [{ type: 'Rental', id: 'NEW' }];
       },
       query: (payload) => ({
         url: '/rentals',
@@ -21,12 +22,13 @@ const rentalApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     fetchRentals: builder.query({
-      providesTags: (result, error, rental) => {
-        const tags = result.map((item) => {
-          return { type: 'Rental', id: item.id };
-        });
-        return tags;
-      },
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: 'Rental', id })),
+              { type: 'Rental', id: 'LIST' },
+            ]
+          : [{ type: 'Rental', id: 'LIST' }],
       query: () => ({
         url: '/rentals',
         method: 'GET',
@@ -34,7 +36,9 @@ const rentalApiSlice = apiSlice.injectEndpoints({
     }),
     deleteRental: builder.mutation({
       invalidatesTags: (result, error, rental) => {
-        return [{ type: 'Rental', id: rental.id }];
+        return result
+          ? [{ type: 'Rental', id: rental.id }]
+          : [{ type: 'Rental', id: 'DELETED' }];
       },
       query: (rentalId) => ({
         url: `/rentals/rental/${rentalId}`,
@@ -46,10 +50,16 @@ const rentalApiSlice = apiSlice.injectEndpoints({
         url: `/rentals/rental/${rentalId}`,
         method: 'GET',
       }),
+      providesTags: (result, error, rentalId) =>
+        result
+          ? [{ type: 'Rental', id: rentalId }]
+          : [],
     }),
-    closeRental: builder.query({
+    closeRental: builder.mutation({
       invalidatesTags: (result, error, rental) => {
-        return [{ type: 'Rental', id: rental.id }];
+        return result
+          ? [{ type: 'Rental', id: rental.id }]
+          : [];
       },
       query: (payload) => ({
         url: `/rentals/rental/${payload.id}/close`,
@@ -62,7 +72,9 @@ const rentalApiSlice = apiSlice.injectEndpoints({
     }),
     changeRentalDescription: builder.mutation({
       invalidatesTags: (result, error, rental) => {
-        return [{ type: 'Rental', id: rental.id }];
+        return result
+          ? [{ type: 'Rental', id: rental.id }]
+          : [];
       },
       query: (payload) => ({
         url: `/rentals/rental/${payload.id}/description`,
@@ -80,6 +92,13 @@ const rentalApiSlice = apiSlice.injectEndpoints({
           ...payload,
         },
       }),
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: 'Rental', id })),
+              { type: 'Rental', id: 'SORTED_LIST' },
+            ]
+          : [{ type: 'Rental', id: 'SORTED_LIST' }],
     }),
   }),
 })

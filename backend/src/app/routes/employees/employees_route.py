@@ -1,4 +1,5 @@
 from flask import request
+from flask_cors import cross_origin
 from flask_jwt_extended import jwt_required
 from flask_restx import Resource, Namespace
 
@@ -20,7 +21,7 @@ class EmployeesRouter(Resource):
     """
     This router handles operations related to all employees.
     """
-
+    # @cross_origin()  # Allow CORS for this specific route
     @employees_namespace.marshal_list_with(employee_get_model)
     @jwt_required()
     def get(self):
@@ -36,6 +37,7 @@ class EmployeesRouter(Resource):
 
         return employees_controller.create_response_with_employees_data()
 
+    # @cross_origin()  # Allow CORS for this specific route
     @employees_namespace.expect(employee_post_model)
     @employees_namespace.response(400, "Invalid employee data.")
     @jwt_required()

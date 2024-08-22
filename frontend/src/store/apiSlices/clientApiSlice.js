@@ -1,6 +1,5 @@
 import { apiSlice } from '../api/apiSlice'
 
-
 const clientApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createClient: builder.mutation({
@@ -23,10 +22,15 @@ const clientApiSlice = apiSlice.injectEndpoints({
     }),
     fetchClients: builder.query({
       providesTags: (result, error, user) => {
-        const tags = result.map((item) => {
-          return { type: 'User', id: item.id };
-        });
-        return tags;
+        if (result) {
+          // Ensure result is not undefined before calling .map
+          return result.map((item) => {
+            return { type: 'User', id: item.id };
+          });
+        } else {
+          // If result is undefined, return a default tag or empty array
+          return [{ type: 'User', id: 'LIST' }];
+        }
       },
       query: () => ({
         url: '/clients',

@@ -14,31 +14,36 @@ import { useOutsideClick } from '../../hooks/useOutSideClick'
 import { useCreateNewRentalMutation } from '../../store/apiSlices/rentalApiSlice'
 import s from './NewRent.module.css'
 
-
 const NewRent = () => {
   const navigate = useNavigate()
   const user = useSelector((state) => state.auth.user)
-  const [createRental, results] = useCreateNewRentalMutation()
+  const [createRental] = useCreateNewRentalMutation()
 
   const [choosenTime, setChoosenTime] = useState(null)
   const [choosenTimeError, setChoosenTimeError] = useState('')
-  // calendar
+
+  // Calendar
   const [open, setOpen] = useState(false)
-  // clients modal
+
+  // Clients modal
   const [isOpenModalClient, setIsOpenModalClient] = useState(false)
   const [choosenClient, setChoosenClient] = useState(null)
+  const [clientError, setClientError] = useState('')
 
-  // equipment modal
+  // Equipment modal
   const [isOpenModalEquipment, setIsOpenModalEquipment] = useState(false)
   const [choosenEquipment, setChoosenEquipment] = useState([])
+  const [equipmentError, setEquipmentError] = useState('')
 
-  // rental stats
+  // Rental stats
   const [rentalTime, setRentalTime] = useState(null)
   const [priceToPay, setPriceToPay] = useState(null)
 
+  const [generalError, setGeneralError] = useState('')
+
   useEffect(() => {
     if (choosenTime && new Date(choosenTime.y, choosenTime.m - 1, choosenTime.d) < new Date()) {
-      setChoosenTimeError('You date must be greater than the actual date.')
+      setChoosenTimeError('Your date must be greater than the current date.')
       setChoosenTime(null)
       setRentalTime(null)
     } else if (choosenTime) {
@@ -75,6 +80,7 @@ const NewRent = () => {
   const handleChooseClient = (user) => {
     setChoosenClient(user)
     setIsOpenModalClient(false)
+    setClientError('') // Clear error when client is chosen
   }
 
   const handleDeleteUser = () => {
@@ -91,33 +97,57 @@ const NewRent = () => {
     )
     if (index === -1) {
       setChoosenEquipment((state) => [...state, equipment])
+      setEquipmentError('') // Clear error when equipment is chosen
     } else {
       setChoosenEquipment(choosenEquipment.filter((item) => item.inventory_number !== equipment.inventory_number))
     }
   }
 
-  const handleSaveRent = () => {
+  const handleSaveRent = async () => {
+    let hasError = false
+
+    // Ensure required fields are populated and set errors if not
+    if (!choosenTime) {
+      setGeneralError('Please choose a rental time.')
+      hasError = true
+    }
+    if (!choosenClient) {
+      setClientError('Please choose a client.')
+      hasError = true
+    }
+    if (!choosenEquipment.length) {
+      setEquipmentError('Please choose at least one piece of equipment.')
+      hasError = true
+    }
+
+    if (hasError) {
+      return
+    }
+
     const res = {
       dateEnd: createDateString(),
       paymentType: 'Card',
-      basePrice: priceToPay,
-      employeeId: user.employeeId,
-      clientId: choosenClient.id,
-      equipments: choosenEquipment.map((equipment) => equipment.inventory_number),
+      basePrice: priceToPay || 0, // Ensure priceToPay is defined, default to 0 if not
+      employeeId: user.employeeId, // Make sure user and employeeId are defined
+      clientId: choosenClient.id, // Ensure client ID is available
+      equipments: choosenEquipment.map((equipment) => equipment.inventory_number), // Ensure equipment is properly mapped
     }
+
     try {
-      createRental(res)
+      await createRental(res).unwrap()
+      // Reset the form after successful submission
       setChoosenTime(null)
       setChoosenTimeError('')
       setIsOpenModalClient(false)
       setChoosenClient(null)
       setIsOpenModalEquipment(false)
-      setChoosenEquipment(false)
+      setChoosenEquipment([])
       setRentalTime(null)
       setPriceToPay(null)
       navigate('/rents')
     } catch (err) {
-      console.log(err)
+      setGeneralError('Failed to create rental. Please try again.')
+      console.error('Failed to create rental:', err)
     }
   }
 
@@ -156,6 +186,8 @@ const NewRent = () => {
     return differenceInHoursToday + differenceInDays * 12
   }
 
+  const isSaveEnabled = choosenTime && choosenClient && choosenEquipment.length > 0
+
   return (
     <div className={g.initialPageContainer}>
       <div className={g.title}>New Rent</div>
@@ -185,6 +217,7 @@ const NewRent = () => {
                 </Button>
                 {isOpenModalClient && clientsModal}
               </div>
+              {clientError && <div className={s.timeError}>{clientError}</div>}
             </div>
             {choosenClient && <ViewUser user={choosenClient} onClick={handleDeleteUser} />}
             <div className={s.chooseClientWrapper}>
@@ -195,6 +228,7 @@ const NewRent = () => {
                 </Button>
                 {isOpenModalEquipment && equipmentModal}
               </div>
+              {equipmentError && <div className={s.timeError}>{equipmentError}</div>}
             </div>
             {!!choosenEquipment.length && (
               <ViewEquipment equipment={choosenEquipment} onClick={handleChooseEquipment} />
@@ -207,7 +241,10 @@ const NewRent = () => {
               <div className={s.statsInfo}>TO PAY - {priceToPay && <>${priceToPay}</>}</div>
             </div>
             <div className={s.saveButtonWrapper}>
-              <Button onClick={handleSaveRent}>Save rent</Button>
+              <Button onClick={handleSaveRent} disabled={!isSaveEnabled}>
+                Save rent
+              </Button>
+              {generalError && <div className={s.timeError}>{generalError}</div>}
             </div>
           </div>
         </div>
