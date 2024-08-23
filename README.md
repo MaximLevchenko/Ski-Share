@@ -92,15 +92,4 @@ Please log in using your CVUT account to access the detailed analysis results. I
 I was responsible for setting up and maintaining the CI/CD pipelines, ensuring that the application was built, tested, and deployed efficiently. The pipelines were configured to automatically build and push Docker images, run tests, and generate documentation.
 
 
-### Running the Backend
-
-To run the backend, first activate the virtual environment by running the following command:
-
-```bash
-source .venv/bin/activate
-```
-Then, start the application with:
-```bash
-python3 run.py
-```
 
