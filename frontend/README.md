@@ -45,23 +45,17 @@ frontend/
 ```
 ## Key Commands
 
-Run the application:
+### Install the dependencies:
+```bash
+npm install
+```
+
+### Run the application:
 
 ```bash
 npm start
 ```
-
 Runs the frontend application on port 3000.
-
-Build the production version:
-
-```bash
-npm run build
-```
-
-Creates an optimized production build of the application.
-
-Access the application:
 
 The frontend will be available at:
 
