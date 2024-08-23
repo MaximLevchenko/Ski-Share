@@ -45,7 +45,7 @@ class LoginRouter(Resource):
 
         except ControllerException as e:
             return {"message": e.message}, e.http_code
-
+        #Here we know that this is a valid user, so we can retrieve its data from the database and jsonify the output
         return login_controller.create_response()
 
 

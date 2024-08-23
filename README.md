@@ -9,6 +9,7 @@ The Ski Equipment Share Application is designed to facilitate the rental and man
 This project was initially developed as part of a course project focusing on the management of ski equipment rentals and sales. The analytical documentation outlines the processes, domain models, and functional requirements for the application.
 
 ### Key Processes
+
 1. **Rental and Return of Equipment**: The system supports the complete process of renting and returning ski equipment, ensuring accurate tracking and management of equipment status.
 2. **Reservation Processing**: Users can reserve ski equipment, and the system manages the availability and notification of reserved items.
 3. **Inventory Management**: The system handles the categorization, storage, and tracking of ski equipment, including details such as manufacturer, model, and warranty information.
@@ -48,7 +49,16 @@ This project was initially developed as part of a course project focusing on the
 - **run.py**: The entry point to run the application.
 - **Dockerfile**: A script to create a Docker image for the application.
 
-### Backend Technologies Stack
+## Backend Implementation Details
+
+While working on this project, I was responsible for implementing the backend functionality. Unfortunately, I am unable to continue the project as I have no knowledge of the frontend part, which was developed by my friend. However, on the backend, I have successfully implemented the following features:
+
+- Filtering, deleting, and updating employees, clients, and equipment.
+- Sorting clients, employees and new equipment in the inventory.
+- Viewing individual pieces of equipment.
+- Viewing individual profiles of clients and employees.
+
+## Backend Technologies Stack
 
 - **Python language**.
 - **Flask framework**: Creating REST APIs with Flask and Flask-RestX.
@@ -57,45 +67,6 @@ This project was initially developed as part of a course project focusing on the
 - **JWT manager**: Working with JWT tokens - JWT Authentication with Flask-JWT-Extended.
 - **Werkzeug security**: For working with password hashing.
 - **Unittest**: Testing Flask API with Unittest.
-
-## Directory Structure
-
-```plaintext
-backend/
-│
-├── src/
-│   ├── app/
-│   │   ├── controllers/
-│   │   │   ├── auth/
-│   │   │   ├── clients/
-│   │   │   ├── employees/
-│   │   │   ├── equipments/
-│   │   │   ├── rentals/
-│   │   ├── models/
-│   │   ├── repositories/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   ├── main.py
-│   │
-│   ├── configurations/
-│   ├── databases/
-├──tests/
-│   ├── test_auth_api.py
-│   ├── test_base_config.py
-│   ├── test_clients_api.py
-│   ├── test_employees_api.py
-│   ├── test_equipments_api.py
-│   ├── test_rentals_api.py
-│
-├── .env
-├── .gitignore
-├── Dockerfile
-├── Pipfile
-├── Pipfile.lock
-├── README.md
-├── requirements.txt
-├── run.py
-```
 
 ### CI/CD with GitLab
 
