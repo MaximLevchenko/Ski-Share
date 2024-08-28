@@ -61,43 +61,33 @@ backend/
 ```
 ## Key Commands
 
-    Run the application:
+Run the application:
 
-    ```bash
-    python3 run.py
-    ```
-
-    Runs the application on port 5000.
-
-    Run tests:
-
-    ```bash
-    python3 test_api.py
-    ```
-
-    Runs the unit and integration tests.
-
-    Access API Documentation:
-
-    The Swagger documentation for the API is available at:
-
-    ```plaintext
-    http://127.0.0.1:5000/docs
-    ```
+```bash
+   python3 run.py
+   ```
+Runs the application on port 5000.
+Run tests:
+```bash
+   python3 test_api.py
+   ```
+Runs the unit and integration tests.
+Access API Documentation:
+The Swagger documentation for the API is available at:
+```plaintext
+   http://127.0.0.1:5000/docs
+   ```
 
 ## Running with Docker
 
-    Build the Docker image:
-
-    ```bash
-    docker build -t ski-share-backend .
-    ```
-
-    Run the Docker container:
-
-    ```bash
-    docker run -d -p 5000:5000 --name ski-share-backend ski-share-backend
-    ```
+Build the Docker image:
+```bash
+   docker build -t ski-share-backend .
+   ```
+Run the Docker container:
+```bash
+   docker run -d -p 5000:5000 --name ski-share-backend ski-share-backend
+   ```
 
 ## API Documentation
 
